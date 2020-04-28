@@ -8,7 +8,7 @@ const App = () => {
     <div className="App">
       <div className="appgrid">
         <div className="header"><Header /></div>
-        <div className="keglist"><KegList /></div>
+        <div className="keg-list"><KegList /></div>
       </div>
     </div>
   );

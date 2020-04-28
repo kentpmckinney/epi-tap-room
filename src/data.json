@@ -1,0 +1,20 @@
+{
+  "kegs": [
+    {
+      "name": "A",
+      "brand": "",
+      "pricePerPint": 0.00,
+      "alcoholContentPerPint": 0.00,
+      "isGlutenFree": false,
+      "isVegan": false
+    },
+    {
+      "name": "B",
+      "brand": "",
+      "pricePerPint": 0.00,
+      "alcoholContentPerPint": 0.00,
+      "isGlutenFree": false,
+      "isVegan": false
+    }
+  ]
+}

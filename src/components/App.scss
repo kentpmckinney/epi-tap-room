@@ -5,8 +5,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 8fr;
     grid-gap: 20px;
-    height: calc(100vh - 60px);
-    width: calc(100vw - 60px);
+    height: calc(100vh - 46px);
+    width: calc(100vw - 46px);
     padding: 15px;
   }
 
@@ -15,7 +15,7 @@
     border: 1px solid pink;
   }
 
-  .keglist {
+  .keg-list {
     grid-area: 2 / 1 / 2 / 2;
     border: 1px solid pink;
   }
