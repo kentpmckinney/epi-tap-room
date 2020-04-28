@@ -20,6 +20,7 @@ https://github.com/kentpmckinney/epi-tap-room
 * 4/28/2020 - Created skeleton React project and added templates (0.5 hours)
 * 4/28/2020 - Created a README.md file (0.5 hours)
 * 4/28/2020 - Added component diagram to README.md (0.75 hours)
+* 4/28/2020 - Added layout grid (0.25 hours)
 
 
 ### Component Diagram:

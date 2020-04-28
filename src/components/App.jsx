@@ -1,10 +1,15 @@
 import React from 'react';
+import Header from './Header/Header';
+import KegList from './KegList/KegList';
 import './App.scss';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Hi!</h1>
+      <div className="appgrid">
+        <div className="header"><Header /></div>
+        <div className="keglist"><KegList /></div>
+      </div>
     </div>
   );
 }
