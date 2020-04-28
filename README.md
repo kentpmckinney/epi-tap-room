@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Independent Project
+## Tap Room
+https://github.com/kentpmckinney/epi-tap-room
 
-## Available Scripts
+##### Author: Kent McKinney - [GitHub](https://github.com/kentpmckinney)
+##### Copyright &copy; 2020 Kent McKinney
+### Description:
 
-In the project directory, you can run:
+``This program provides the ability to view, track, and edit kegs``
 
-### `npm start`
+### Setup Instructions:
+    1. Download a copy of the source code from GitHub from https://github.com/kentpmckinney/epi-tap-room
+    2. Install NodeJS if not already installed
+    3. Navigate to the location of the downloaded source files
+    4. Run the command `npm install` to download a local cache of the npm packages used by this application
+    5. Install SASS with the command `npm install node-sass`
+    6. Start the application with the command `npm run start`
+ 
+### Changelog:
+* 4/28/2020 - Created skeleton React project and added templates (0.5 hours)
+* 4/28/2020 - Created a README.md file (0.5)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Component Diagram:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Specifications:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Spec | Input | Output |
+| :------------- | :------------- | :------------- |
+| ** Application created with create-react-app runs properly ** | ✓ | ✓ |
+| ** User can see a list of all available kegs ** |  |  |
+| ** User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg ** |  |  |
+| ** User can submit a form to add a new keg ** |  |  |
+| ** User can click on a keg to see its detail page ** |  |  |
+| ** User can see how many pints are left in a keg ** |  |  |
+| ** User can click on a button next to the keg whenver a pint is sold ** |  |  |
+| ** Clicking the button to sell a pint decreases the number of pints by 1 out of 124 ** |  |  |
+| ** The number of pints in a keg does not go below zero ** |  |  |
+| ** [Optional] User can edit the keg's properties at any time ** |  |  |
+| ** [Optional] User can delete a keg ** |  |  |
+| ** [Optional] Keg shows as out of stock when it's empty ** |  |  |
+| ** [Optional] Kegs with less than 10 pints show 'Almost Empty' ** |  |  |
+| ** [Optional] Keg prices are color-coded for readability ** |  |  |
+| ** [Optional] Application is nicely styled ** |  |  |
