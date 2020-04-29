@@ -1,10 +1,10 @@
 import React from 'react';
 import './Keg.scss';
 
-const Keg = () => {
+const Keg = props => {
   return (
     <div className="Keg">
-      <h5>Keg</h5>
+      {props.children}
     </div>
   );
 }

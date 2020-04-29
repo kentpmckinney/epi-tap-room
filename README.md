@@ -22,6 +22,8 @@ https://github.com/kentpmckinney/epi-tap-room
 * 4/28/2020 - Added component diagram to README.md (0.75 hours)
 * 4/28/2020 - Added basic components and layout grid (0.50 hours)
 * 4/28/2020 - Started a simple JSON data file and loaded it into KegList (0.50 hours)
+* 4/29/2020 - Added JSON data to KegList state (0.25 hours)
+* 4/29/2020 - Implemented a list of kegs and all necessary details (0.75 hours)
 
 
 ### Component Diagram:
@@ -58,9 +60,9 @@ https://github.com/kentpmckinney/epi-tap-room
 
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
-| ** Application created with create-react-app runs properly ** | ✓ | ✓ |
-| ** User can see a list of all available kegs ** |  |  |
-| ** User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg ** |  |  |
+| ** Application created with create-react-app runs properly ** | √ | √ |
+| ** User can see a list of all available kegs ** | √ | √ |
+| ** User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg ** | √ | √ |
 | ** User can submit a form to add a new keg ** |  |  |
 | ** User can click on a keg to see its detail page ** |  |  |
 | ** User can see how many pints are left in a keg ** |  |  |
