@@ -1,0 +1,16 @@
+.KegList {
+  
+  .flexbox {
+    display: flex;
+  }
+
+  .add-keg-outer {
+    position: relative;
+  }
+
+  .add-keg-inner {
+    position: absolute;
+    right: 0;
+  }
+
+}

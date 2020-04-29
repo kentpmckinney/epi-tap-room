@@ -43,6 +43,12 @@ class KegList extends React.Component {
     this.setState({ kegInEditState: key, kegs: newKegs });
   }
 
+  handleClickDeleteKeg = event => {
+    const kegs = this.state.kegs;
+    const filteredKegs = kegs.filter(keg => keg.key !== event.target.id)
+    this.setState({ kegs: filteredKegs });
+  }
+
   handleClickSaveKeg = (kegName, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
     const kegs = this.state.kegs;
     let newKegs = kegs.map(keg => {
@@ -99,6 +105,7 @@ class KegList extends React.Component {
                       this.state.kegs[i].key)
                   }>Save</button>
                 </div>
+                <div><button onClick={this.handleClickDeleteKeg} id={this.state.kegs[i].key}>Delete</button></div>
               </React.Fragment>
               :
               this.state.kegInShowDetailState && this.state.kegInShowDetailState === this.state.kegs[i].key ?
@@ -136,10 +143,16 @@ class KegList extends React.Component {
     }
 
     return (
-      <div className="KegList" >
-        <div><button onClick={this.handleClickAddKeg}>Add Keg</button></div>
-        {kegsUI}
-      </div >
+      <div className="KegList">
+        <div className='add-keg-outer'>
+          <div className='add-keg-inner'>
+            <button onClick={this.handleClickAddKeg}>Add Keg</button>
+          </div>
+        </div>
+        <div className='flexbox'>
+          {kegsUI}
+        </div>
+      </div>
     );
   }
 }
