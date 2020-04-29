@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  color: gray;
+  // border: 1px solid gray;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 1px lightgray;
 
   .content {
     margin-left: 20px;

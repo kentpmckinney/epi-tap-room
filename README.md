@@ -71,8 +71,8 @@ https://github.com/kentpmckinney/epi-tap-room
 | ** Clicking the button to sell a pint decreases the number of pints by 1 out of 124 ** | √ | √ |
 | ** The number of pints in a keg does not go below zero ** | √ | √ |
 | ** [Optional] User can edit the keg's properties at any time ** | √ | √ |
-| ** [Optional] User can delete a keg ** |  |  |
-| ** [Optional] Keg shows as out of stock when it's empty ** |  |  |
-| ** [Optional] Kegs with less than 10 pints show 'Almost Empty' ** |  |  |
-| ** [Optional] Keg prices are color-coded for readability ** |  |  |
-| ** [Optional] Application is nicely styled ** |  |  |
+| ** [Optional] User can delete a keg ** | √ | √ |
+| ** [Optional] Keg shows as out of stock when it's empty ** | √ | √ |
+| ** [Optional] Kegs with less than 10 pints show 'Almost Empty' ** | √ | √ |
+| ** [Optional] Keg prices are color-coded for readability ** | √ | √ |
+| ** [Optional] Application is nicely styled ** | √ | √ |

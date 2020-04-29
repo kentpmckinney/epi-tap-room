@@ -1,7 +1,28 @@
 .KegList {
   
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+
+  button {
+    padding: 3px 10px 3px 10px;
+    box-shadow: 1px 1px 2px 2px lightgray;
+  }
+
+  label {
+    color: orange;
+  }
+
+  .keg-name {
+    font-size: 12pt;
+  }
+
+  .keg-price {
+    color: darkgreen;
+  }
+
   .flexbox {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .add-keg-outer {
@@ -11,6 +32,10 @@
   .add-keg-inner {
     position: absolute;
     right: 0;
+  }
+
+  .warning {
+    color: red;
   }
 
 }

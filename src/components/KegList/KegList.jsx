@@ -85,13 +85,14 @@ class KegList extends React.Component {
             this.state.kegInEditState && this.state.kegInEditState === this.state.kegs[i].key ?
               /* Render the Keg in Edit state */
               <React.Fragment>
-                <div><span>Name: </span><input id='keg-name' defaultValue={this.state.kegs[i].kegName}></input></div>
-                <div><span>Brand: </span><input id='keg-brand' defaultValue={this.state.kegs[i].brand}></input></div>
-                <div><span>Price per Pint: </span><input id='keg-price' defaultValue={this.state.kegs[i].pricePerPint}></input></div>
-                <div><span>Alcohol Content: </span><input id='keg-alcohol' defaultValue={this.state.kegs[i].alcoholContent}></input></div>
-                <div><span>Gluten Free: </span><input id='keg-gluten' defaultValue={this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}></input></div>
-                <div><span>Vegan: </span><input id='keg-vegan' defaultValue={this.state.kegs[i].isVegan ? 'Yes' : 'No'}></input></div>
-                <div><span>Pints Remaining: </span><input id='keg-pints' defaultValue={this.state.kegs[i].pintsRemaining}></input></div>
+                <div><label htmlFor='keg-name'>Name: </label><input className='keg-name' id='keg-name' defaultValue={this.state.kegs[i].kegName}></input></div>
+                <hr />
+                <div><label htmlFor='keg-brand'>Brand: </label><input id='keg-brand' defaultValue={this.state.kegs[i].brand}></input></div>
+                <div><label htmlFor='keg-price'>Price per Pint: </label><input id='keg-price' defaultValue={this.state.kegs[i].pricePerPint}></input></div>
+                <div><label htmlFor='keg-alcohol'>Alcohol Content: </label><input id='keg-alcohol' defaultValue={this.state.kegs[i].alcoholContent}></input></div>
+                <div><label htmlFor='keg-gluten'>Gluten Free: </label><input id='keg-gluten' defaultValue={this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}></input></div>
+                <div><label htmlFor='keg-vegan'>Vegan: </label><input id='keg-vegan' defaultValue={this.state.kegs[i].isVegan ? 'Yes' : 'No'}></input></div>
+                <div><label htmlFor='keg-pints'>Pints Remaining: </label><input id='keg-pints' defaultValue={this.state.kegs[i].pintsRemaining}></input></div>
                 <div>
                   <button onClick={() =>
                     this.handleClickSaveKeg(
@@ -111,14 +112,17 @@ class KegList extends React.Component {
               this.state.kegInShowDetailState && this.state.kegInShowDetailState === this.state.kegs[i].key ?
                 /* Render the Keg in Show Detail state */
                 <React.Fragment>
-                  <div><span>Name: </span><span>{this.state.kegs[i].kegName}</span></div>
+                  <div className='keg-name'>{this.state.kegs[i].kegName}</div>
+                  <hr />
                   <div><span>Brand: </span><span>{this.state.kegs[i].brand}</span></div>
-                  <div><span>Price per Pint: </span><span>{this.state.kegs[i].pricePerPint}</span></div>
+                  <div><span>Price per Pint: </span><span className='keg-price'>{this.state.kegs[i].pricePerPint}</span></div>
                   <div><span>Alcohol Content: </span><span>{this.state.kegs[i].alcoholContent}</span></div>
                   <div><span>Gluten Free: </span><span>{this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}</span></div>
                   <div><span>Vegan: </span><span>{this.state.kegs[i].isVegan ? 'Yes' : 'No'}</span></div>
                   <br />
                   <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span></div>
+                  {this.state.kegs[i].pintsRemaining > 1 && this.state.kegs[i].pintsRemaining < 10 ? <div className='warning'>Almost Emtpy</div> : ''}
+                  {this.state.kegs[i].pintsRemaining <= 0 ? <div className='warning'>Out of Stock</div> : ''}
                   <br />
                   <button onClick={this.handleClickBackFromDetail} id={this.state.kegs[i].key}>Back</button>
                   <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
@@ -126,10 +130,13 @@ class KegList extends React.Component {
                 :
                 /* Render the Keg in Normal state */
                 <React.Fragment>
-                  <div><span>Name: </span><span>{this.state.kegs[i].kegName}</span></div>
-                  <div><span>Price per Pint: </span><span>{this.state.kegs[i].pricePerPint}</span></div>
+                  <div className='keg-name'>{this.state.kegs[i].kegName}</div>
+                  <hr />
+                  <div><span>Price per Pint: </span><span className='keg-price'>{this.state.kegs[i].pricePerPint}</span></div>
                   <br />
                   <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span></div>
+                  {this.state.kegs[i].pintsRemaining > 0 && this.state.kegs[i].pintsRemaining < 10 ? <div className='warning'>Almost Emtpy</div> : ''}
+                  {this.state.kegs[i].pintsRemaining <= 0 ? <div className='warning'>Out of Stock</div> : ''}
                   <br />
                   <button onClick={() => {
                     this.handleClickPurchasePint(1, this.state.kegs[i].key);
