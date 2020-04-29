@@ -65,7 +65,7 @@ https://github.com/kentpmckinney/epi-tap-room
 | ** User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg ** | √ | √ |
 | ** User can submit a form to add a new keg ** |  |  |
 | ** User can click on a keg to see its detail page ** |  |  |
-| ** User can see how many pints are left in a keg ** |  |  |
+| ** User can see how many pints are left in a keg ** | √ | √ |
 | ** User can click on a button next to the keg whenver a pint is sold ** |  |  |
 | ** Clicking the button to sell a pint decreases the number of pints by 1 out of 124 ** |  |  |
 | ** The number of pints in a keg does not go below zero ** |  |  |

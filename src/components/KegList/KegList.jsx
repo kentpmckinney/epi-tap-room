@@ -23,6 +23,8 @@ class KegList extends React.Component {
           <div><span>Alcohol Content: </span><span>{this.state.kegs[i].alcoholContent}</span></div>
           <div><span>Gluten Free: </span><span>{this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}</span></div>
           <div><span>Vegan: </span><span>{this.state.kegs[i].isVegan ? 'Yes' : 'No'}</span></div>
+          <br></br>
+          <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span></div>
         </Keg>
       )
     }

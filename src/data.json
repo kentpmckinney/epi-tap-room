@@ -6,7 +6,8 @@
       "pricePerPint": 0.00,
       "alcoholContent": 0.00,
       "isGlutenFree": false,
-      "isVegan": false
+      "isVegan": false,
+      "pintsRemaining": 124
     },
     {
       "name": "B",
@@ -14,7 +15,8 @@
       "pricePerPint": 0.00,
       "alcoholContent": 0.00,
       "isGlutenFree": false,
-      "isVegan": false
+      "isVegan": false,
+      "pintsRemaining": 124
     }
   ]
 }
