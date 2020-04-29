@@ -25,7 +25,7 @@ https://github.com/kentpmckinney/epi-tap-room
 * 4/29/2020 - Added JSON data to KegList state (0.25 hours)
 * 4/29/2020 - Implemented a list of kegs and all necessary details (0.75 hours)
 * 4/29/2020 - Add button to purchase a pint (0.50 hours)
-
+* 4/29/2020 - Add remaining required specs (2.50 hours)
 
 ### Component Diagram:
 
@@ -64,13 +64,13 @@ https://github.com/kentpmckinney/epi-tap-room
 | ** Application created with create-react-app runs properly ** | √ | √ |
 | ** User can see a list of all available kegs ** | √ | √ |
 | ** User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg ** | √ | √ |
-| ** User can submit a form to add a new keg ** |  |  |
-| ** User can click on a keg to see its detail page ** |  |  |
+| ** User can submit a form to add a new keg ** | √ | √ |
+| ** User can click on a keg to see its detail page ** | √ | √ |
 | ** User can see how many pints are left in a keg ** | √ | √ |
 | ** User can click on a button next to the keg whenever a pint is sold ** | √ | √ |
 | ** Clicking the button to sell a pint decreases the number of pints by 1 out of 124 ** | √ | √ |
-| ** The number of pints in a keg does not go below zero ** |  |  |
-| ** [Optional] User can edit the keg's properties at any time ** |  |  |
+| ** The number of pints in a keg does not go below zero ** | √ | √ |
+| ** [Optional] User can edit the keg's properties at any time ** | √ | √ |
 | ** [Optional] User can delete a keg ** |  |  |
 | ** [Optional] Keg shows as out of stock when it's empty ** |  |  |
 | ** [Optional] Kegs with less than 10 pints show 'Almost Empty' ** |  |  |

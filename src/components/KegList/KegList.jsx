@@ -9,7 +9,8 @@ class KegList extends React.Component {
     super(props);
     this.state = {
       kegs: data.kegs,
-      kegInEditState: null
+      kegInEditState: null,
+      kegInShowDetailState: null
     };
     this.state.kegs.forEach(keg => {
       keg.key = v4();
@@ -22,6 +23,7 @@ class KegList extends React.Component {
       if (keg.key === key) {
         let newKeg = keg;
         newKeg.pintsRemaining -= pintsPurchased;
+        if (newKeg.pintsRemaining < 0) newKeg.pintsRemaining = 0;
         return newKeg;
       }
       else return keg;
@@ -33,13 +35,20 @@ class KegList extends React.Component {
     this.setState({ kegInEditState: event.target.id });
   }
 
+  handleClickAddKeg = event => {
+    let newKegs = this.state.kegs
+    const key = v4();
+    let newKeg = { kegName: '', brand: '', pintsRemaining: 124, pricePerPint: 0.00, alcoholContent: 0.0, glutenStatus: false, veganStatus: false, key: key };
+    newKegs.unshift(newKeg);
+    this.setState({ kegInEditState: key, kegs: newKegs });
+  }
+
   handleClickSaveKeg = (kegName, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
-    console.log(kegName);
     const kegs = this.state.kegs;
     let newKegs = kegs.map(keg => {
       if (keg.key === key) {
         let newKeg = keg;
-        newKeg.pintsRemaining = pintsRemaining;
+        newKeg.pintsRemaining = pintsRemaining >= 0 ? pintsRemaining : 0;
         newKeg.kegName = kegName;
         newKeg.brand = brand;
         newKeg.pricePerPint = price;
@@ -51,6 +60,14 @@ class KegList extends React.Component {
       else return keg;
     });
     this.setState({ kegInEditState: null, kegs: newKegs });
+  }
+
+  handleClickShowDetail = event => {
+    this.setState({ kegInShowDetailState: event.target.id });
+  }
+
+  handleClickBackFromDetail = event => {
+    this.setState({ kegInShowDetailState: null });
   }
 
   render() {
@@ -84,22 +101,35 @@ class KegList extends React.Component {
                 </div>
               </React.Fragment>
               :
-              /* Render the Keg in Normal state */
-              <React.Fragment>
-                <div><span>Name: </span><span>{this.state.kegs[i].kegName}</span></div>
-                <div><span>Brand: </span><span>{this.state.kegs[i].brand}</span></div>
-                <div><span>Price per Pint: </span><span>{this.state.kegs[i].pricePerPint}</span></div>
-                <div><span>Alcohol Content: </span><span>{this.state.kegs[i].alcoholContent}</span></div>
-                <div><span>Gluten Free: </span><span>{this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}</span></div>
-                <div><span>Vegan: </span><span>{this.state.kegs[i].isVegan ? 'Yes' : 'No'}</span></div>
-                <br />
-                <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span></div>
-                <br />
-                <button onClick={() => {
-                  this.handleClickPurchasePint(1, this.state.kegs[i].key);
-                }} id={this.state.kegs[i].key}>Purchase Pint</button>
-                <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
-              </React.Fragment>
+              this.state.kegInShowDetailState && this.state.kegInShowDetailState === this.state.kegs[i].key ?
+                /* Render the Keg in Show Detail state */
+                <React.Fragment>
+                  <div><span>Name: </span><span>{this.state.kegs[i].kegName}</span></div>
+                  <div><span>Brand: </span><span>{this.state.kegs[i].brand}</span></div>
+                  <div><span>Price per Pint: </span><span>{this.state.kegs[i].pricePerPint}</span></div>
+                  <div><span>Alcohol Content: </span><span>{this.state.kegs[i].alcoholContent}</span></div>
+                  <div><span>Gluten Free: </span><span>{this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}</span></div>
+                  <div><span>Vegan: </span><span>{this.state.kegs[i].isVegan ? 'Yes' : 'No'}</span></div>
+                  <br />
+                  <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span></div>
+                  <br />
+                  <button onClick={this.handleClickBackFromDetail} id={this.state.kegs[i].key}>Back</button>
+                  <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
+                </React.Fragment>
+                :
+                /* Render the Keg in Normal state */
+                <React.Fragment>
+                  <div><span>Name: </span><span>{this.state.kegs[i].kegName}</span></div>
+                  <div><span>Price per Pint: </span><span>{this.state.kegs[i].pricePerPint}</span></div>
+                  <br />
+                  <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span></div>
+                  <br />
+                  <button onClick={() => {
+                    this.handleClickPurchasePint(1, this.state.kegs[i].key);
+                  }} id={this.state.kegs[i].key}>Purchase Pint</button>
+                  <button onClick={this.handleClickShowDetail} id={this.state.kegs[i].key}>Details</button>
+                  <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
+                </React.Fragment>
           }
         </Keg >
       )
