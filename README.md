@@ -36,8 +36,8 @@ https://github.com/kentpmckinney/epi-tap-room
 |   |--------------------------------|     |
 |                                          |
 |   |--------------------------------|     |
-|   |      KegList           [New] <-|-----|--- Clicking on New in KegList adds a new Keg to the top of the list
-|   |          -----------           |     |    in Edit mode
+|   |      KegList           [New] <-|-----|--- Clicking on New in KegList adds a new Keg to the top of
+|   |          -----------           |     |    the list in Edit mode
 |   |          | Keg     |           |     |
 |   |          -----------           |     |
 |   |          | Keg     |           |     |
