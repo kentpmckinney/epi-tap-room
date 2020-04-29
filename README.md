@@ -21,6 +21,7 @@ https://github.com/kentpmckinney/epi-tap-room
 * 4/28/2020 - Created a README.md file (0.5 hours)
 * 4/28/2020 - Added component diagram to README.md (0.75 hours)
 * 4/28/2020 - Added basic components and layout grid (0.50 hours)
+* 4/28/2020 - Started a simple JSON data file and loaded it into KegList (0.50 hours)
 
 
 ### Component Diagram:
@@ -35,16 +36,16 @@ https://github.com/kentpmckinney/epi-tap-room
 |   |--------------------------------|     |
 |                                          |
 |   |--------------------------------|     |
-|   |      KegList           [New] <----------- Clicking on New adds a new Keg to the top of the list in Edit mode
-|   |          -----------           |     |
+|   |      KegList           [New] <-|-----|--- Clicking on New in KegList adds a new Keg to the top of the list
+|   |          -----------           |     |    in Edit mode
 |   |          | Keg     |           |     |
 |   |          -----------           |     |
 |   |          | Keg     |           |     |
 |   |          --------------------  |     |
-|   |          | [Details] [Edit] <------------ Clicking on Details or Edit on any Keg fires event handlers in KegList
-|   |          |                  |  |     |    The event handlers cause different children to be passed to <Keg />
-|   |          |    Keg           |  |     |    <Keg /> is thus reused rather than creating separate components
-|   |          |                  |  |     |
+|   |          | [Details] [Edit] <--|-----|--- Clicking on Details or Edit in  Keg fires event handlers
+|   |          |                  |  |     |    in KegList. The event handlers cause different children
+|   |          |    Keg           |  |     |    to be passed to <Keg />. <Keg /> is thus reused rather
+|   |          |                  |  |     |    than creating separate components
 |   |          --------------------  |     |
 |   |                                |     |
 |   |--------------------------------|     |
