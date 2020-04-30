@@ -1,14 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
-import data from '../../data.json';
 import './KegList.scss';
 
 class KegList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      kegs: data.kegs,
+      kegs: props.kegs,
       kegInEditState: null,
       kegInShowDetailState: null
     };
@@ -55,7 +55,7 @@ class KegList extends React.Component {
       if (keg.key === key) {
         let newKeg = keg;
         newKeg.pintsRemaining = pintsRemaining >= 0 ? pintsRemaining : 0;
-        newKeg.kegName = kegName;
+        newKeg.kegName = kegName ? kegName : 'Nameless One';
         newKeg.brand = brand;
         newKeg.pricePerPint = price;
         newKeg.alcoholContent = alcoholContent;
@@ -65,7 +65,6 @@ class KegList extends React.Component {
       }
       else return keg;
     });
-    console.log(newKegs)
     this.setState({ kegInEditState: null, kegs: newKegs });
   }
 
@@ -163,6 +162,10 @@ class KegList extends React.Component {
       </div>
     );
   }
+}
+
+KegList.propTypes = {
+  kegs: PropTypes.arrayOf(Object)
 }
 
 export default KegList;

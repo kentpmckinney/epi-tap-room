@@ -26,6 +26,8 @@ https://github.com/kentpmckinney/epi-tap-room
 * 4/29/2020 - Implemented a list of kegs and all necessary details (0.75 hours)
 * 4/29/2020 - Add button to purchase a pint (0.50 hours)
 * 4/29/2020 - Add remaining required specs (2.50 hours)
+* 4/29/2020 - Add remaining optional specs (2.00 hours)
+* 4/29/2020 - Final testing and refactoring to ensure objectives are met
 
 ### Component Diagram:
 
@@ -70,6 +72,11 @@ https://github.com/kentpmckinney/epi-tap-room
 | ** User can click on a button next to the keg whenever a pint is sold ** | √ | √ |
 | ** Clicking the button to sell a pint decreases the number of pints by 1 out of 124 ** | √ | √ |
 | ** The number of pints in a keg does not go below zero ** | √ | √ |
+| ** Application compiles and runs and all required functionality is included ** | √ | √ |
+| ** Functional and class components are used correctly ** | √ | √ |
+| ** Application effectively uses local and shared state ** | √ | √ |
+| ** README includes an accurate representation of the component tree ** | √ | √ |
+| ** Props are used correctly and always include PropTypes ** |  |  |
 | ** [Optional] User can edit the keg's properties at any time ** | √ | √ |
 | ** [Optional] User can delete a keg ** | √ | √ |
 | ** [Optional] Keg shows as out of stock when it's empty ** | √ | √ |
