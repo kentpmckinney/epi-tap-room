@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="Header">
       <div className="content">
-        Tap Room Inventory
+        Keg Inventory Tracker
       </div>
     </div>
   );

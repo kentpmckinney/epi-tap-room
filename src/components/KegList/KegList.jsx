@@ -12,11 +12,14 @@ class KegList extends React.Component {
       kegInEditState: null,
       kegInShowDetailState: null
     };
+
+    // Give each Keg a unique key
     this.state.kegs.forEach(keg => {
       keg.key = v4();
     });
   }
 
+  /* handleClickPurchasePint - decrement remaining pints when a pint is purchased */
   handleClickPurchasePint = (pintsPurchased, key) => {
     const kegs = this.state.kegs;
     let newKegs = kegs.map(keg => {
@@ -31,10 +34,12 @@ class KegList extends React.Component {
     this.setState({ kegs: newKegs });
   }
 
+  /* handleClickEditKeg - change the state slice kegInEditState when the Keg's Edit button is clicked */
   handleClickEditKeg = event => {
     this.setState({ kegInEditState: event.target.id });
   }
 
+  /* handleClickAddKeg - create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */
   handleClickAddKeg = () => {
     let newKegs = this.state.kegs
     const key = v4();
@@ -43,12 +48,14 @@ class KegList extends React.Component {
     this.setState({ kegInEditState: key, kegs: newKegs });
   }
 
+  /* handleClickDeleteKeg - delete a Keg when the Delete button on the Edit screen is clicked */
   handleClickDeleteKeg = event => {
     const kegs = this.state.kegs;
     const filteredKegs = kegs.filter(keg => keg.key !== event.target.id)
     this.setState({ kegs: filteredKegs });
   }
 
+  /* handleClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
   handleClickSaveKeg = (kegName, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
     const kegs = this.state.kegs;
     let newKegs = kegs.map(keg => {
@@ -68,22 +75,29 @@ class KegList extends React.Component {
     this.setState({ kegInEditState: null, kegs: newKegs });
   }
 
+  /* handleClickShowDetail - change the state slice kegInShowDetailState when the Details button is clicked */
   handleClickShowDetail = event => {
     this.setState({ kegInShowDetailState: event.target.id });
   }
 
+  /* handleClickBackFromDetail - change the state slice kegInShowDetailState when the Back button is clicked in Detail mode */
   handleClickBackFromDetail = event => {
     this.setState({ kegInShowDetailState: null });
   }
 
+
   render() {
     let kegsUI = [];
+
+    // Iterate over the list of kegs
     for (let i = 0; i < this.state.kegs.length; i++) {
+
+      // Push the User Interface for the current Keg to the kegsUI array
       kegsUI.push(
         <Keg key={this.state.kegs[i].key}>
           {
             this.state.kegInEditState && this.state.kegInEditState === this.state.kegs[i].key ?
-              /* Render the Keg in Edit state */
+              /* Render the Keg in EDIT MODE */
               <React.Fragment>
                 <div><label htmlFor='keg-name'>Name: </label><input className='keg-name' id='keg-name' defaultValue={this.state.kegs[i].kegName}></input></div>
                 <hr />
@@ -103,14 +117,13 @@ class KegList extends React.Component {
                       document.getElementById('keg-gluten').value,
                       document.getElementById('keg-vegan').value,
                       document.getElementById('keg-pints').value,
-                      this.state.kegs[i].key)
-                  }>Save</button>
+                      this.state.kegs[i].key)}>Save</button>
                 </div>
                 <div><button onClick={this.handleClickDeleteKeg} id={this.state.kegs[i].key}>Delete</button></div>
               </React.Fragment>
               :
               this.state.kegInShowDetailState && this.state.kegInShowDetailState === this.state.kegs[i].key ?
-                /* Render the Keg in Show Detail state */
+                /* Render the Keg in SHOW DETAIL MODE */
                 <React.Fragment>
                   <div className='keg-name'>{this.state.kegs[i].kegName}</div>
                   <hr />
@@ -128,7 +141,7 @@ class KegList extends React.Component {
                   <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
                 </React.Fragment>
                 :
-                /* Render the Keg in Normal state */
+                /* Render the Keg in NORMAL MODE */
                 <React.Fragment>
                   <div className='keg-name'>{this.state.kegs[i].kegName}</div>
                   <hr />
@@ -156,9 +169,7 @@ class KegList extends React.Component {
             <button onClick={this.handleClickAddKeg}>Add Keg</button>
           </div>
         </div>
-        <div className='flexbox'>
-          {kegsUI}
-        </div>
+        <div className='flexbox'>{kegsUI}</div>
       </div>
     );
   }
