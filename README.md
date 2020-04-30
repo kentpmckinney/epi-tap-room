@@ -28,6 +28,7 @@ https://github.com/kentpmckinney/epi-tap-room
 * 4/29/2020 - Add remaining required specs (2.50 hours)
 * 4/29/2020 - Add remaining optional specs (2.00 hours)
 * 4/29/2020 - Final testing and refactoring to ensure objectives are met
+* 4/29/2020 - Applied finishing touches
 
 ### Component Diagram:
 
@@ -76,7 +77,7 @@ https://github.com/kentpmckinney/epi-tap-room
 | ** Functional and class components are used correctly ** | √ | √ |
 | ** Application effectively uses local and shared state ** | √ | √ |
 | ** README includes an accurate representation of the component tree ** | √ | √ |
-| ** Props are used correctly and always include PropTypes ** |  |  |
+| ** Props are used correctly and always include PropTypes ** | √ | √ |
 | ** [Optional] User can edit the keg's properties at any time ** | √ | √ |
 | ** [Optional] User can delete a keg ** | √ | √ |
 | ** [Optional] Keg shows as out of stock when it's empty ** | √ | √ |
