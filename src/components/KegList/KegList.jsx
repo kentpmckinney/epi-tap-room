@@ -35,7 +35,7 @@ class KegList extends React.Component {
     this.setState({ kegInEditState: event.target.id });
   }
 
-  handleClickAddKeg = event => {
+  handleClickAddKeg = () => {
     let newKegs = this.state.kegs
     const key = v4();
     let newKeg = { kegName: '', brand: '', pintsRemaining: 124, pricePerPint: 0.00, alcoholContent: 0.0, glutenStatus: false, veganStatus: false, key: key };
@@ -59,12 +59,13 @@ class KegList extends React.Component {
         newKeg.brand = brand;
         newKeg.pricePerPint = price;
         newKeg.alcoholContent = alcoholContent;
-        newKeg.glutenStatus = glutenStatus;
-        newKeg.veganStatus = veganStatus;
+        newKeg.isGlutenFree = glutenStatus.toLowerCase() === 'yes';
+        newKeg.isVegan = veganStatus.toLowerCase() === 'yes';
         return newKeg;
       }
       else return keg;
     });
+    console.log(newKegs)
     this.setState({ kegInEditState: null, kegs: newKegs });
   }
 
