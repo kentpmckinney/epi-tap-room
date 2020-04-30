@@ -1,21 +1,30 @@
 {
   "kegs": [
     {
-      "kegName": "A",
-      "brand": "",
+      "kegName": "Free as In Beer",
+      "brand": "Basic Beers",
       "pricePerPint": 0.00,
-      "alcoholContent": 0.00,
+      "alcoholContent": 3.50,
       "isGlutenFree": false,
-      "isVegan": false,
-      "pintsRemaining": 124
+      "isVegan": true,
+      "pintsRemaining": 10
     },
     {
-      "kegName": "B",
-      "brand": "",
-      "pricePerPint": 0.00,
-      "alcoholContent": 0.00,
+      "kegName": "Beat It, Barley!",
+      "brand": "Caring Crafts",
+      "pricePerPint": 7.00,
+      "alcoholContent": 8.50,
+      "isGlutenFree": true,
+      "isVegan": true,
+      "pintsRemaining": 86
+    },
+    {
+      "kegName": "Corona Killer",
+      "brand": "Dangerous Drafts",
+      "pricePerPint": 8.50,
+      "alcoholContent": 23.50,
       "isGlutenFree": false,
-      "isVegan": false,
+      "isVegan": true,
       "pintsRemaining": 124
     }
   ]
