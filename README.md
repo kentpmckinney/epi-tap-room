@@ -8,6 +8,8 @@ https://github.com/kentpmckinney/epi-tap-room
 
 ``This program provides the ability to view, track, and edit kegs``
 
+``A live demo of this application is available on [GitHub Pages](https://kentpmckinney.github.io/epi-tap-room/)``
+
 ### Setup Instructions:
     1. Download a copy of the source code from GitHub from https://github.com/kentpmckinney/epi-tap-room
     2. Install NodeJS if not already installed
