@@ -9,8 +9,7 @@ class KegList extends React.Component {
     super(props);
     this.state = {
       kegs: props.kegs,
-      kegInEditState: null,
-      kegInShowDetailState: null
+      kegInEditState: null
     };
 
     // Give each Keg a unique key
@@ -75,17 +74,6 @@ class KegList extends React.Component {
     this.setState({ kegInEditState: null, kegs: newKegs });
   }
 
-  /* handleClickShowDetail - change the state slice kegInShowDetailState when the Details button is clicked */
-  handleClickShowDetail = event => {
-    this.setState({ kegInShowDetailState: event.target.id });
-  }
-
-  /* handleClickBackFromDetail - change the state slice kegInShowDetailState when the Back button is clicked in Detail mode */
-  handleClickBackFromDetail = event => {
-    this.setState({ kegInShowDetailState: null });
-  }
-
-
   render() {
     let kegsUI = [];
 
@@ -122,43 +110,33 @@ class KegList extends React.Component {
                 <div><button onClick={this.handleClickDeleteKeg} id={this.state.kegs[i].key}>Delete</button></div>
               </React.Fragment>
               :
-              this.state.kegInShowDetailState && this.state.kegInShowDetailState === this.state.kegs[i].key ?
-                /* Render the Keg in SHOW DETAIL MODE */
-                <React.Fragment>
-                  <div className='keg-name'>{this.state.kegs[i].kegName}</div>
-                  <hr />
-                  <div><span>Brand: </span><span>{this.state.kegs[i].brand}</span></div>
-                  <div><span>Price per Pint: </span><span className='keg-price'>${this.state.kegs[i].pricePerPint}</span></div>
-                  <div><span>Alcohol Content: </span><span>{this.state.kegs[i].alcoholContent}%</span></div>
-                  <div><span>Gluten Free: </span><span>{this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}</span></div>
-                  <div><span>Vegan: </span><span>{this.state.kegs[i].isVegan ? 'Yes' : 'No'}</span></div>
+              /* Render the Keg in NORMAL MODE */
+              <React.Fragment>
+                <div className='keg-name'>{this.state.kegs[i].kegName}</div>
+                <hr />
+                <div><span>Price per Pint: </span><span className='keg-price'>${this.state.kegs[i].pricePerPint}</span></div>
+                <br />
+                <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span>
+                  {this.state.kegs[i].pintsRemaining > 0 && this.state.kegs[i].pintsRemaining < 10 ? <span className='warning'>Almost Emtpy</span> : ''}
+                  {this.state.kegs[i].pintsRemaining <= 0 ? <span className='warning'>Out of Stock</span> : ''}
+                </div>
+                <br />
+                <details>
+                  <summary>Details</summary>
                   <br />
-                  <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span>
-                    {this.state.kegs[i].pintsRemaining > 1 && this.state.kegs[i].pintsRemaining < 10 ? <span className='warning'>Almost Emtpy</span> : ''}
-                    {this.state.kegs[i].pintsRemaining <= 0 ? <span className='warning'>Out of Stock</span> : ''}
+                  <div className='within-details'>
+                    <div><span>Brand: </span><span>{this.state.kegs[i].brand}</span></div>
+                    <div><span>Alcohol Content: </span><span>{this.state.kegs[i].alcoholContent}%</span></div>
+                    <div><span>Gluten Free: </span><span>{this.state.kegs[i].isGlutenFree ? 'Yes' : 'No'}</span></div>
+                    <div><span>Vegan: </span><span>{this.state.kegs[i].isVegan ? 'Yes' : 'No'}</span></div>
                   </div>
-                  <br />
-                  <button onClick={this.handleClickBackFromDetail} id={this.state.kegs[i].key}>Back</button>
-                  <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
-                </React.Fragment>
-                :
-                /* Render the Keg in NORMAL MODE */
-                <React.Fragment>
-                  <div className='keg-name'>{this.state.kegs[i].kegName}</div>
-                  <hr />
-                  <div><span>Price per Pint: </span><span className='keg-price'>${this.state.kegs[i].pricePerPint}</span></div>
-                  <br />
-                  <div><span>Pints Remaining: </span><span>{this.state.kegs[i].pintsRemaining}</span>
-                    {this.state.kegs[i].pintsRemaining > 0 && this.state.kegs[i].pintsRemaining < 10 ? <span className='warning'>Almost Emtpy</span> : ''}
-                    {this.state.kegs[i].pintsRemaining <= 0 ? <span className='warning'>Out of Stock</span> : ''}
-                  </div>
-                  <br />
-                  <button onClick={() => {
-                    this.handleClickPurchasePint(1, this.state.kegs[i].key);
-                  }} id={this.state.kegs[i].key}>Purchase Pint</button>
-                  <button onClick={this.handleClickShowDetail} id={this.state.kegs[i].key}>Details</button>
-                  <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
-                </React.Fragment>
+                </details>
+                <br />
+                <button onClick={() => {
+                  this.handleClickPurchasePint(1, this.state.kegs[i].key);
+                }} id={this.state.kegs[i].key}>Purchase Pint</button>
+                <button onClick={this.handleClickEditKeg} id={this.state.kegs[i].key}>Edit</button>
+              </React.Fragment>
           }
         </Keg >
       )
