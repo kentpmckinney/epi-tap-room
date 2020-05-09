@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
 import './KegList.scss';
 
-export default class KegList extends React.Component {
+class KegList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { kegs: props.kegs, kegInEditState: null };
@@ -145,3 +146,7 @@ export default class KegList extends React.Component {
 KegList.propTypes = {
   kegs: PropTypes.arrayOf(Object)
 }
+
+const mapStateToProps = state => { return { kegs: state } }
+KegList = connect(mapStateToProps)(KegList);
+export default KegList;
