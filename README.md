@@ -1,3 +1,4 @@
+<!-- Category: React -->
 # Independent Project
 ## Tap Room
 https://github.com/kentpmckinney/epi-tap-room
