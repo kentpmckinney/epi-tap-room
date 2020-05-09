@@ -9,7 +9,7 @@ const App = () => {
     <div className="App">
       <div className="appgrid">
         <div className="header"><Header /></div>
-        <div className="keg-list"><KegList kegs={data.kegs} /></div>
+        <div className="keg-list"><KegList kegData={data} /></div>
       </div>
     </div>
   );

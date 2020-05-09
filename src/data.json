@@ -1,7 +1,7 @@
 {
   "kegs": [
     {
-      "kegName": "Free as In Beer",
+      "name": "Free as In Beer",
       "brand": "Basic Beers",
       "pricePerPint": 0.00,
       "alcoholContent": 3.50,
@@ -10,7 +10,7 @@
       "pintsRemaining": 10
     },
     {
-      "kegName": "Beat It, Barley!",
+      "name": "Beat It, Barley!",
       "brand": "Caring Crafts",
       "pricePerPint": 7.00,
       "alcoholContent": 8.50,
@@ -19,7 +19,7 @@
       "pintsRemaining": 86
     },
     {
-      "kegName": "Corona Killer",
+      "name": "Corona Killer",
       "brand": "Dangerous Drafts",
       "pricePerPint": 8.50,
       "alcoholContent": 23.50,

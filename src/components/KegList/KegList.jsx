@@ -8,68 +8,64 @@ import './KegList.scss';
 class KegList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { kegs: props.kegs, kegInEditState: null };
-    this.state.kegs.forEach(keg => { keg.key = v4(); }); // Give each Keg a unique key
+    this.state = { editing: null };
+    props.kegData.kegs.forEach(keg => {
+      const action = {
+        type: 'ADD_ITEM', key: v4(), name: keg.name, brand: keg.brand, pricePerPint: keg.pricePerPint, alcoholContent: keg.alcoholContent,
+        pintsRemaining: keg.pintsRemaining, isGlutenFree: keg.isGlutenFree, isVegan: keg.isVegan
+      }
+      props.dispatch(action);
+    });
   }
 
   /* onClickPurchasePint - decrement remaining pints when a pint is purchased */
-  onClickPurchasePint = (pintsPurchased, key) => {
-    const kegs = this.state.kegs;
-    let newKegs = kegs.map(keg => {
-      if (keg.key === key) {
-        let newKeg = keg;
-        newKeg.pintsRemaining -= pintsPurchased;
-        if (newKeg.pintsRemaining < 0) newKeg.pintsRemaining = 0;
-        return newKeg;
-      }
-      else return keg;
-    });
-    this.setState({ kegs: newKegs });
+  onClickPurchasePint = (key) => {
+    console.log(key)
+    const keg = this.props.kegs.filter(keg => keg.key === key);
+    let pintsRemaining = keg.pintsRemaining - 1;
+    if (pintsRemaining < 1) { pintsRemaining = 0 }
+    const action = {
+      type: 'UPDATE_ITEM', key: key, name: keg.name, brand: keg.brand, pricePerPint: keg.pricePerPint, alcoholContent: keg.alcoholContent,
+      pintsRemaining: pintsRemaining, isGlutenFree: keg.isGlutenFree, isVegan: keg.isVegan
+    }
+    this.props.dispatch(action);
   }
 
-  /* onClickEditKeg - change the state slice kegInEditState when the Keg's Edit button is clicked */
-  onClickEditKeg = event => { this.setState({ kegInEditState: event.target.id }); }
+  /* onClickEditKeg - change the state slice editing when the Keg's Edit button is clicked */
+  onClickEditKeg = event => { this.setState({ editing: event.target.id }); }
 
   /* onClickAddKeg - create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */
   onClickAddKeg = () => {
-    let newKegs = this.state.kegs
     const key = v4();
-    let newKeg = { kegName: '', brand: '', pintsRemaining: 124, pricePerPint: 0.00, alcoholContent: 0.0, glutenStatus: false, veganStatus: false, key: key };
-    newKegs.unshift(newKeg);
-    this.setState({ kegInEditState: key, kegs: newKegs });
+    const action = {
+      type: 'ADD_ITEM', key: key, name: '', brand: '', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false
+    }
+    this.props.dispatch(action);
+    this.setState({ editing: key });
   }
 
   /* onClickDeleteKeg - delete a Keg when the Delete button on the Edit screen is clicked */
   onClickDeleteKeg = event => {
-    const kegs = this.state.kegs;
-    const filteredKegs = kegs.filter(keg => keg.key !== event.target.id)
-    this.setState({ kegs: filteredKegs });
+    const action = { type: 'DELETE_ITEM', key: event.target.id }
+    this.props.dispatch(action);
   }
 
   /* onClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
-  onClickSaveKeg = (kegName, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
-    const newKegs = this.state.kegs.map(keg => {
-      if (keg.key === key) {
-        let newKeg = keg;
-        newKeg.pintsRemaining = pintsRemaining >= 0 ? pintsRemaining : 0;
-        newKeg.kegName = kegName ? kegName : 'Nameless One';
-        newKeg.brand = brand;
-        newKeg.pricePerPint = price;
-        newKeg.alcoholContent = alcoholContent;
-        newKeg.isGlutenFree = glutenStatus.toLowerCase() === 'yes';
-        newKeg.isVegan = veganStatus.toLowerCase() === 'yes';
-        return newKeg;
-      }
-      else return keg;
-    });
-    this.setState({ kegInEditState: null, kegs: newKegs });
+  onClickSaveKeg = (name, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
+    const action = {
+      type: 'UPDATE_ITEM', key: key, brand: brand, pricePerPint: price, alcoholContent: alcoholContent,
+      pintsRemaining: pintsRemaining, name: name === '' ? 'Nameless One' : name,
+      isGlutenFree: glutenStatus.toLowerCase() === 'yes', isVegan: veganStatus.toLowerCase() === 'yes'
+    }
+    this.props.dispatch(action);
+    this.setState({ editing: null });
   }
 
   generateEditModeUI(keg) {
     const $ = id => document.getElementById(id);
     return (
       <React.Fragment>
-        <label>Name: <input className='keg-name' id='keg-name' defaultValue={keg.kegName} /></label>
+        <label>Name: <input className='keg-name' id='keg-name' defaultValue={keg.name} /></label>
         <hr />
         <div><label>Brand: <input id='keg-brand' defaultValue={keg.brand}></input></label></div>
         <div><label>Price per Pint $: <input id='keg-price' defaultValue={keg.pricePerPint} /></label></div>
@@ -90,7 +86,7 @@ class KegList extends React.Component {
   generateNormalModeUI(keg) {
     return (
       <React.Fragment>
-        <div className='keg-name'>{keg.kegName}</div>
+        <div className='keg-name'>{keg.name}</div>
         <hr />
         <div>Price per Pint: <span className='keg-price'>${keg.pricePerPint}</span></div>
         <br />
@@ -110,25 +106,13 @@ class KegList extends React.Component {
           </div>
         </details>
         <br />
-        <button onClick={() => { this.onClickPurchasePint(1, keg.key); }} id={keg.key}>Purchase Pint</button>
+        <button onClick={() => { this.onClickPurchasePint(keg.key); }} id={keg.key}>Purchase Pint</button>
         <button onClick={this.onClickEditKeg} id={keg.key}>Edit</button>
       </React.Fragment>
     );
   }
 
   render() {
-
-    let kegsUI = [];
-    for (let i = 0; i < this.state.kegs.length; i++) {
-      const keg = this.state.kegs[i];
-
-      kegsUI.push( // Push the User Interface for the current Keg to the kegsUI array
-        <Keg key={keg.key}>
-          {this.state.kegInEditState && this.state.kegInEditState === keg.key ? this.generateEditModeUI(keg) : this.generateNormalModeUI(keg)}
-        </Keg >
-      )
-    }
-
     return (
       <div className="KegList">
         <div className='add-keg-outer'>
@@ -136,7 +120,11 @@ class KegList extends React.Component {
             <button onClick={this.onClickAddKeg}>Add Keg</button>
           </div>
         </div>
-        <div className='flexbox'>{kegsUI}</div>
+        <div className='flexbox'>{this.props.kegs.map(keg =>
+          <Keg key={keg.key}>
+            {this.state.editing && this.state.editing === keg.key ? this.generateEditModeUI(keg) : this.generateNormalModeUI(keg)}
+          </Keg >)}
+        </div>
       </div>
     );
   }
