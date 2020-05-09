@@ -12,6 +12,11 @@
     color: orange;
   }
 
+  summary {
+    cursor: pointer;
+    user-select: none;
+  }
+
   .within-details {
     margin-left: 20px;
   }

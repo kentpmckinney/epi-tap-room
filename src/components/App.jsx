@@ -1,4 +1,6 @@
 import React from 'react';
+import Redux from 'redux';
+import { Provider } from 'react-redux';
 import Header from './Header/Header';
 import KegList from './KegList/KegList';
 import data from '../data.json';
