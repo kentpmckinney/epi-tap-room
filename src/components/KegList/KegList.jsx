@@ -20,8 +20,7 @@ class KegList extends React.Component {
 
   /* onClickPurchasePint - decrement remaining pints when a pint is purchased */
   onClickPurchasePint = (key) => {
-    console.log(key)
-    const keg = this.props.kegs.filter(keg => keg.key === key);
+    const keg = this.props.kegs.filter(keg => keg.key === key)[0];
     let pintsRemaining = keg.pintsRemaining - 1;
     if (pintsRemaining < 1) { pintsRemaining = 0 }
     const action = {
