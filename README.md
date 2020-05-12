@@ -65,6 +65,7 @@ Kent McKinney - [GitHub](https://github.com/kentpmckinney) - [LinkedIn](https://
 
 ## Acknowledgments
 
+https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5-1-react-fundamentals-independent-project
 
 ### Component Diagram:
 
