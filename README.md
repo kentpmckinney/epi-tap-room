@@ -1,37 +1,70 @@
-<!-- Category: React -->
-# Independent Project
-## Tap Room
+<!-- Category: Epicodus;React;HTML/CSS/JS -->
+# Tap Room
+
+Provides the ability to view, add, and edit kegs
+
 https://github.com/kentpmckinney/epi-tap-room
 
-##### Author: Kent McKinney - [GitHub](https://github.com/kentpmckinney)
-##### Copyright &copy; 2020 Kent McKinney
-### Description:
+## Previewing this Project
 
-``This program provides the ability to view, track, and edit kegs``
+This project is hosted at: https://kentpmckinney.github.io/epi-tap-room
 
-``A live demo of this application is available on`` [GitHub Pages](https://kentpmckinney.github.io/epi-tap-room/)
+## Working with the Source Code
 
-### Setup Instructions:
-    1. Download a copy of the source code from GitHub from https://github.com/kentpmckinney/epi-tap-room
-    2. Install NodeJS if not already installed
-    3. Navigate to the location of the downloaded source files
-    4. Run the command `npm install` to download a local cache of the npm packages used by this application
-    5. Install SASS with the command `npm install node-sass`
-    6. Start the application with the command `npm run start`
- 
-### Changelog:
-* 4/28/2020 - Created skeleton React project and added templates (0.5 hours)
-* 4/28/2020 - Created a README.md file (0.5 hours)
-* 4/28/2020 - Added component diagram to README.md (0.75 hours)
-* 4/28/2020 - Added basic components and layout grid (0.50 hours)
-* 4/28/2020 - Started a simple JSON data file and loaded it into KegList (0.50 hours)
-* 4/29/2020 - Added JSON data to KegList state (0.25 hours)
-* 4/29/2020 - Implemented a list of kegs and all necessary details (0.75 hours)
-* 4/29/2020 - Add button to purchase a pint (0.50 hours)
-* 4/29/2020 - Add remaining required specs (2.50 hours)
-* 4/29/2020 - Add remaining optional specs (2.00 hours)
-* 4/29/2020 - Final testing and refactoring to ensure objectives are met
-* 4/29/2020 - Applied finishing touches
+The following instructions explain how to set up a development environment for this project on MacOS. Steps will differ depending on the operating system.
+
+### Prerequisites
+
+The following software must be installed and properly configured on the target machine. 
+
+```
+An updated web browser (Internet Explorer is not compatible)
+```
+```
+Node.js
+```
+```
+Git (optional but recommended)
+```
+
+### Setting up a Development Environment
+
+1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room
+   or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room.git
+2. Navigate to the folder location of the source files in Finder or in the Terminal
+3. Run the command `npm install` to download a local cache of the npm packages used by this application
+4. Build the application with the command `npm run build`
+5. Start the application with the command `npm run start`
+
+## Running Automated Tests
+
+how to run the automated tests
+
+```
+example
+```
+
+## Deployment
+
+
+
+## Technologies Used
+
+* JavaScript
+* HTML
+* CSS
+* React
+* Webpack
+* Babel
+
+## Authors
+
+Kent McKinney - [GitHub](https://github.com/kentpmckinney) - [LinkedIn](https://www.linkedin.com/in/kentpmckinney/)
+
+### Copyright &copy; 2020 Kent P. McKinney
+
+## Acknowledgments
+
 
 ### Component Diagram:
 
