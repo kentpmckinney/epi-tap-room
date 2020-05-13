@@ -38,15 +38,15 @@ Git (optional but recommended)
 
 ## Running Automated Tests
 
-how to run the automated tests
+Tests are under ``/src/__tests__``
 
 ```
-example
+npm run test
 ```
 
 ## Deployment
 
-
+Run the command 'npm run build' to build a production version of the application under ./build
 
 ## Technologies Used
 
@@ -54,6 +54,7 @@ example
 * HTML
 * CSS
 * React
+* Redux
 * Webpack
 * Babel
 
@@ -100,25 +101,25 @@ https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5
 
 ### Specifications:
 
-| Spec | Input | Output |
-| :------------- | :------------- | :------------- |
-| Application created with create-react-app runs properly | √ | √ |
-| User can see a list of all available kegs | √ | √ |
-| User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg | √ | √ |
-| User can submit a form to add a new keg | √ | √ |
-| User can click on a keg to see its detail page | √ | √ |
-| User can see how many pints are left in a keg | √ | √ |
-| User can click on a button next to the keg whenever a pint is sold | √ | √ |
-| Clicking the button to sell a pint decreases the number of pints by 1 out of 124 | √ | √ |
-| The number of pints in a keg does not go below zero | √ | √ |
-| Application compiles and runs and all required functionality is included | √ | √ |
-| Functional and class components are used correctly | √ | √ |
-| Application effectively uses local and shared state | √ | √ |
-| README includes an accurate representation of the component tree | √ | √ |
-| Props are used correctly and always include PropTypes | √ | √ |
-| [Optional] User can edit the keg's properties at any time | √ | √ |
-| [Optional] User can delete a keg | √ | √ |
-| [Optional] Keg shows as out of stock when it's empty | √ | √ |
-| [Optional] Kegs with less than 10 pints show 'Almost Empty' | √ | √ |
-| [Optional] Keg prices are color-coded for readability | √ | √ |
-| [Optional] Application is nicely styled | √ | √ |
+| Spec | Status |
+| :------------- | :------------- |
+| Application created with create-react-app runs properly | √ |
+| User can see a list of all available kegs | √ |
+| User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg | √ |
+| User can submit a form to add a new keg | √ |
+| User can click on a keg to see its detail page | √ |
+| User can see how many pints are left in a keg | √ |
+| User can click on a button next to the keg whenever a pint is sold | √ |
+| Clicking the button to sell a pint decreases the number of pints by 1 out of 124 | √ |
+| The number of pints in a keg does not go below zero | √ |
+| Application compiles and runs and all required functionality is included | √ |
+| Functional and class components are used correctly | √ |
+| Application effectively uses local and shared state | √ |
+| README includes an accurate representation of the component tree | √ |
+| Props are used correctly and always include PropTypes | √ |
+| [Optional] User can edit the keg's properties at any time | √ |
+| [Optional] User can delete a keg | √ |
+| [Optional] Keg shows as out of stock when it's empty | √ |
+| [Optional] Kegs with less than 10 pints show 'Almost Empty' | √ |
+| [Optional] Keg prices are color-coded for readability | √ |
+| [Optional] Application is nicely styled | √ |
