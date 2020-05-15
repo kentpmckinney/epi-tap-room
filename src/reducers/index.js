@@ -1,4 +1,4 @@
-import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM } from '../reducers'
+import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM } from '../actions';
 
 const reducer = (state = [], action) => {
   const { type, data } = action;
