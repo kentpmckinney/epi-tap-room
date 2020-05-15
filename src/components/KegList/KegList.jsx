@@ -3,15 +3,20 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
-import { addItem, updateItem, deleteItem } from '../../actions/index';
+import { addItem, updateItem, deleteItem } from '../../actions';
 import './KegList.scss';
 
 class KegList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editing: null };
-    props.kegData.kegs.forEach(keg => {
-      props.addItem(v4(), keg.name, keg.brand, keg.pricePerPint, keg.alcoholContent, keg.pintsRemaining, keg.isGlutenFree, keg.isVegan);
+
+  }
+
+  componentDidMount() {
+    this.props.kegData.kegs.forEach(keg => {
+      const key = v4();
+      this.props.addItem(key, keg.name, keg.brand, keg.pricePerPint, keg.alcoholContent, keg.pintsRemaining, keg.isGlutenFree, keg.isVegan);
     });
   }
 
@@ -20,11 +25,7 @@ class KegList extends React.Component {
     const keg = this.props.kegs.filter(keg => keg.key === key)[0];
     let pintsRemaining = keg.pintsRemaining - 1;
     if (pintsRemaining < 1) { pintsRemaining = 0 }
-    const action = {
-      type: 'UPDATE_ITEM', key: key, name: keg.name, brand: keg.brand, pricePerPint: keg.pricePerPint, alcoholContent: keg.alcoholContent,
-      pintsRemaining: pintsRemaining, isGlutenFree: keg.isGlutenFree, isVegan: keg.isVegan
-    }
-    this.props.dispatch(action);
+    this.props.updateItem(key, keg.name, keg.brand, keg.pricePerPint, keg.alcoholContent, pintsRemaining, keg.isGlutenFree, keg.isVegan);
   }
 
   /* onClickEditKeg - change the state slice editing when the Keg's Edit button is clicked */
@@ -33,27 +34,18 @@ class KegList extends React.Component {
   /* onClickAddKeg - create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */
   onClickAddKeg = () => {
     const key = v4();
-    const action = {
-      type: 'ADD_ITEM', key: key, name: '', brand: '', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false
-    }
-    this.props.dispatch(action);
+    this.props.addItem(key, '', '', 0.00, 0.0, 124, false, false);
     this.setState({ editing: key });
   }
 
   /* onClickDeleteKeg - delete a Keg when the Delete button on the Edit screen is clicked */
   onClickDeleteKeg = event => {
-    const action = { type: 'DELETE_ITEM', key: event.target.id }
-    this.props.dispatch(action);
+    this.props.deleteItem(event.target.id);
   }
 
   /* onClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
   onClickSaveKeg = (name, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
-    const action = {
-      type: 'UPDATE_ITEM', key: key, brand: brand, pricePerPint: price, alcoholContent: alcoholContent,
-      pintsRemaining: pintsRemaining, name: name === '' ? 'Nameless One' : name,
-      isGlutenFree: glutenStatus.toLowerCase() === 'yes', isVegan: veganStatus.toLowerCase() === 'yes'
-    }
-    this.props.dispatch(action);
+    this.props.updateItem(key, brand, price, alcoholContent, pintsRemaining, name === '' ? 'Nameless One' : name, glutenStatus.toLowerCase() === 'yes', veganStatus.toLowerCase() === 'yes');
     this.setState({ editing: null });
   }
 
