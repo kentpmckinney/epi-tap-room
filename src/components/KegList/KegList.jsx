@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
-import * as c from '../../actions';
+import { addItem, updateItem, deleteItem } from '../../actions/index';
 import './KegList.scss';
 
 class KegList extends React.Component {
@@ -11,11 +11,7 @@ class KegList extends React.Component {
     super(props);
     this.state = { editing: null };
     props.kegData.kegs.forEach(keg => {
-      const action = {
-        type: 'ADD_ITEM', key: v4(), name: keg.name, brand: keg.brand, pricePerPint: keg.pricePerPint, alcoholContent: keg.alcoholContent,
-        pintsRemaining: keg.pintsRemaining, isGlutenFree: keg.isGlutenFree, isVegan: keg.isVegan
-      }
-      props.dispatch(action);
+      props.addItem(v4(), keg.name, keg.brand, keg.pricePerPint, keg.alcoholContent, keg.pintsRemaining, keg.isGlutenFree, keg.isVegan);
     });
   }
 
@@ -136,5 +132,5 @@ KegList.propTypes = {
 }
 
 const mapStateToProps = state => { return { kegs: state } }
-KegList = connect(mapStateToProps, { actionAddItem, actionUpdateItem, actionDeleteItem })(KegList);
+KegList = connect(mapStateToProps, { addItem, updateItem, deleteItem })(KegList);
 export default KegList;
