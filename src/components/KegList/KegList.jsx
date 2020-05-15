@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
+import * as c from '../../actions';
 import './KegList.scss';
 
 class KegList extends React.Component {
@@ -135,5 +136,5 @@ KegList.propTypes = {
 }
 
 const mapStateToProps = state => { return { kegs: state } }
-KegList = connect(mapStateToProps)(KegList);
+KegList = connect(mapStateToProps, { actionAddItem, actionUpdateItem, actionDeleteItem })(KegList);
 export default KegList;
