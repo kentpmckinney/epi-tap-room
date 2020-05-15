@@ -59,8 +59,7 @@ class KegList extends React.Component {
         <div><label>Pints Remaining: <input id='keg-pints' defaultValue={keg.pintsRemaining} /></label></div>
         <div>
           <button onClick={() =>
-            this.onClickSaveKeg($('keg-name').value, $('keg-brand').value, $('keg-price').value, $('keg-alcohol').value, $('keg-gluten').value, $('keg-vegan').value, $('keg-pints').value,
-              keg.key)}>Save</button>
+            this.onClickSaveKeg(keg.key, $('keg-name').value, $('keg-brand').value, $('keg-price').value, $('keg-alcohol').value, $('keg-gluten').value, $('keg-vegan').value, $('keg-pints').value)}>Save</button>
         </div>
         <div><button onClick={this.onClickDeleteKeg} id={keg.key}>Delete</button></div>
       </React.Fragment>
@@ -97,6 +96,7 @@ class KegList extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       < div className="KegList" >
         <div className='add-keg-outer'>
@@ -112,7 +112,6 @@ class KegList extends React.Component {
       </div >
     );
   }
-
 }
 
 KegList.propTypes = {
