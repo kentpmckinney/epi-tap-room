@@ -1,6 +1,7 @@
+import { combineReducers } from 'redux';
 import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM } from '../actions';
 
-const reducer = (state = [], action) => {
+const kegReducer = (state = [], action) => {
   const { type, data } = action;
   switch (type) {
     case ADD_ITEM:
@@ -14,4 +15,4 @@ const reducer = (state = [], action) => {
   }
 }
 
-export default reducer;
+export default combineReducers({ keg: kegReducer });
