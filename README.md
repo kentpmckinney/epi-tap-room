@@ -139,7 +139,5 @@ Week 2:
 | All reducers should be tested thoroughly, and all tests must be passing |  |
 | Action creators and constants should be used |  |
 | React application works as expected and follows best practices, including using JSX, props, and prop types |  |
-| Action creators and constants should be used |  |
 | Jest is used to test all reducers |  |
-| Actions and action constants are used |  |
 | Project is in a polished, portfolio-quality state |  |
