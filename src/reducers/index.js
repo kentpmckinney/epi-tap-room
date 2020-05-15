@@ -15,4 +15,4 @@ const kegReducer = (state = [], action) => {
   }
 }
 
-export default combineReducers({ keg: kegReducer });
+export default combineReducers({ kegs: kegReducer });
