@@ -1,4 +1,4 @@
-import { addItem, updateItem, deleteItem, ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, ENTER_EDIT_MODE, LEAVE_EDIT_MODE } from '../actions';
+import { addItem, updateItem, deleteItem, enterEdit, leaveEdit, ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, ENTER_EDIT_MODE, LEAVE_EDIT_MODE } from '../actions';
 
 describe('action creator tests', () => {
 

@@ -6,21 +6,21 @@ describe('reducer tests', () => {
   test('ADD_ITEM', () => {
     const action = { type: ADD_ITEM, data: { name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 } };
     const state = reducer([], action);
-    expect(state).toEqual({ kegReducer: [{ name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 }] });
+    expect(state).toEqual({ kegReducer: [{ name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 }], editReducer: { key: null } });
   });
 
   test('UPDATE_ITEM', () => {
-    let state = { kegReducer: [{ name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 }] };
+    let state = { kegReducer: [{ name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 }], editReducer: { key: null } };
     const action = { type: UPDATE_ITEM, data: { name: 'test3', brand: 'test2', pricePerPint: 5.00, alcoholContent: 5.0, pintsRemaining: 120, isGlutenFree: true, isVegan: true, key: 1 } };
     state = reducer(state, action);
-    expect(state).toEqual({ kegReducer: [{ name: 'test3', brand: 'test2', pricePerPint: 5.00, alcoholContent: 5.0, pintsRemaining: 120, isGlutenFree: true, isVegan: true, key: 1 }] });
+    expect(state).toEqual({ kegReducer: [{ name: 'test3', brand: 'test2', pricePerPint: 5.00, alcoholContent: 5.0, pintsRemaining: 120, isGlutenFree: true, isVegan: true, key: 1 }], editReducer: { key: null } });
   });
 
   test('DELETE_ITEM', () => {
-    let state = { kegReducer: [{ name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 }] };
+    let state = { kegReducer: [{ name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 }], editReducer: { key: null } };
     const action = { type: DELETE_ITEM, data: { key: 1 } };
     state = reducer(state, action);
-    expect(state).toEqual({ kegReducer: [] });
+    expect(state).toEqual({ kegReducer: [], editReducer: { key: null } });
   });
 
 });

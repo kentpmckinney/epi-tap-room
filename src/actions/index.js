@@ -17,7 +17,7 @@ export const deleteItem = key => {
 }
 
 export const enterEdit = key => {
-  return { type: ENTER_EDIT_MODE, data: { item: key } }
+  return { type: ENTER_EDIT_MODE, data: { key } }
 }
 
 export const leaveEdit = () => {

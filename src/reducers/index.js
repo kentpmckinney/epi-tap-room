@@ -15,13 +15,13 @@ const kegReducer = (state = [], action) => {
   }
 }
 
-const editReducer = (state = false, action) => {
+const editReducer = (state = { key: null }, action) => {
   const { type, data } = action;
   switch (type) {
     case ENTER_EDIT_MODE:
       return { item: data.item };
     case LEAVE_EDIT_MODE:
-      return { item: null };
+      return { key: null };
     default:
       return state;
   }
