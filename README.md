@@ -1,5 +1,5 @@
 <!-- Category: Epicodus;React;HTML/CSS/JS -->
-# Tap Room
+# Tap Room (Redux)
 
 Provides the ability to view, add, and edit kegs
 
@@ -66,7 +66,8 @@ Kent McKinney - [GitHub](https://github.com/kentpmckinney) - [LinkedIn](https://
 
 ## Acknowledgments
 
-https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5-1-react-fundamentals-independent-project
+Week 1: https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5-1-react-fundamentals-independent-project
+Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redux-independent-project
 
 ### Component Diagram:
 
@@ -101,6 +102,8 @@ https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5
 
 ### Specifications:
 
+Week 1:
+
 | Spec | Status |
 | :------------- | :------------- |
 | Application created with create-react-app runs properly | √ |
@@ -123,3 +126,16 @@ https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5
 | [Optional] Kegs with less than 10 pints show 'Almost Empty' | √ |
 | [Optional] Keg prices are color-coded for readability | √ |
 | [Optional] Application is nicely styled | √ |
+
+Week 2:
+
+| Spec | Status |
+| :------------- | :------------- |
+| All state in your application should be handled by Redux (even if React can handle it locally) |  |
+| All reducers should be tested thoroughly, and all tests must be passing |  |
+| Action creators and constants should be used |  |
+| React application works as expected and follows best practices, including using JSX, props, and prop types |  |
+| Action creators and constants should be used |  |
+| Jest is used to test all reducers |  |
+| Actions and action constants are used |  |
+| Project is in a polished, portfolio-quality state |  |
