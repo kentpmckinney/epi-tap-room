@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM } from '../actions';
+import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, ENTER_EDIT_MODE, LEAVE_EDIT_MODE } from '../actions';
 
 const kegReducer = (state = [], action) => {
   const { type, data } = action;
@@ -15,4 +15,16 @@ const kegReducer = (state = [], action) => {
   }
 }
 
-export default combineReducers({ kegReducer });
+const editReducer = (state = false, action) => {
+  const { type, data } = action;
+  switch (type) {
+    case ENTER_EDIT_MODE:
+      return { item: data.item };
+    case LEAVE_EDIT_MODE:
+      return { item: null };
+    default:
+      return state;
+  }
+}
+
+export default combineReducers({ kegReducer, editReducer });

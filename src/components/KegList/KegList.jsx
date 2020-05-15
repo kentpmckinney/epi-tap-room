@@ -22,7 +22,7 @@ class KegList extends React.Component {
 
   /* onClickPurchasePint - decrement remaining pints when a pint is purchased */
   onClickPurchasePint = (key) => {
-    const keg = this.props.kegs.kegReducer.filter(keg => keg.key === key)[0];
+    const keg = this.props.kegs.filter(keg => keg.key === key)[0];
     let pintsRemaining = keg.pintsRemaining - 1;
     if (pintsRemaining < 1) { pintsRemaining = 0 }
     this.props.updateItem(key, keg.name, keg.brand, keg.pricePerPint, keg.alcoholContent, pintsRemaining, keg.isGlutenFree, keg.isVegan);
@@ -101,19 +101,20 @@ class KegList extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div className="KegList">
+      < div className="KegList" >
         <div className='add-keg-outer'>
           <div className='add-keg-inner'>
             <button onClick={this.onClickAddKeg}>Add Keg</button>
           </div>
         </div>
-        <div className='flexbox'>{this.props.kegs.kegReducer.map(keg =>
+        <div className='flexbox'>{this.props.kegs.map(keg =>
           <Keg key={keg.key}>
             {this.state.editing && this.state.editing === keg.key ? this.generateEditModeUI(keg) : this.generateNormalModeUI(keg)}
           </Keg >)}
         </div>
-      </div>
+      </div >
     );
   }
 
@@ -123,6 +124,6 @@ KegList.propTypes = {
   kegReducer: PropTypes.arrayOf(Object)
 }
 
-const mapStateToProps = state => { return { kegs: state } }
+const mapStateToProps = state => { return { kegs: state.kegReducer, edit: state.editReducer } }
 KegList = connect(mapStateToProps, { addItem, updateItem, deleteItem })(KegList);
 export default KegList;

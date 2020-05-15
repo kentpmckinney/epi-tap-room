@@ -1,4 +1,4 @@
-import { addItem, updateItem, deleteItem, ADD_ITEM, UPDATE_ITEM, DELETE_ITEM } from '../actions';
+import { addItem, updateItem, deleteItem, ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, ENTER_EDIT_MODE, LEAVE_EDIT_MODE } from '../actions';
 
 describe('action creator tests', () => {
 
@@ -15,6 +15,16 @@ describe('action creator tests', () => {
   test('deleteItem', () => {
     const action = deleteItem(1);
     expect(action).toEqual({ type: DELETE_ITEM, data: { key: 1 } });
+  });
+
+  test('enterEdit', () => {
+    const action = enterEdit(1);
+    expect(action).toEqual({ type: ENTER_EDIT_MODE, data: { key: 1 } });
+  });
+
+  test('enterEdit', () => {
+    const action = leaveEdit();
+    expect(action).toEqual({ type: LEAVE_EDIT_MODE });
   });
 
 });
