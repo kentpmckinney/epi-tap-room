@@ -12,7 +12,9 @@ describe('action creator tests', () => {
     expect(action).toEqual({ type: UPDATE_ITEM, data: { name: 'test', brand: 'test', pricePerPint: 0.00, alcoholContent: 0.0, pintsRemaining: 124, isGlutenFree: false, isVegan: false, key: 1 } });
   });
 
-
-
+  test('deleteItem', () => {
+    const action = deleteItem(1);
+    expect(action).toEqual({ type: DELETE_ITEM, data: { key: 1 } });
+  });
 
 });
