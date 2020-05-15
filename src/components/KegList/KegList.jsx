@@ -3,15 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
-import { addItem, updateItem, deleteItem } from '../../actions';
+import { addItem, updateItem, deleteItem, enterEdit, leaveEdit } from '../../actions';
 import './KegList.scss';
 
 class KegList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { editing: null };
-
-  }
 
   componentDidMount() {
     this.props.kegData.kegs.forEach(keg => {
@@ -29,24 +24,25 @@ class KegList extends React.Component {
   }
 
   /* onClickEditKeg - change the state slice editing when the Keg's Edit button is clicked */
-  onClickEditKeg = event => { this.setState({ editing: event.target.id }); }
+  onClickEditKeg = event => { this.props.enterEdit(event.target.id); }
 
   /* onClickAddKeg - create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */
   onClickAddKeg = () => {
     const key = v4();
     this.props.addItem(key, '', '', 0.00, 0.0, 124, false, false);
-    this.setState({ editing: key });
+    this.props.enterEdit(key);
   }
 
   /* onClickDeleteKeg - delete a Keg when the Delete button on the Edit screen is clicked */
   onClickDeleteKeg = event => {
     this.props.deleteItem(event.target.id);
+    this.props.leaveEdit();
   }
 
   /* onClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
-  onClickSaveKeg = (name, brand, price, alcoholContent, glutenStatus, veganStatus, pintsRemaining, key) => {
-    this.props.updateItem(key, brand, price, alcoholContent, pintsRemaining, name === '' ? 'Nameless One' : name, glutenStatus.toLowerCase() === 'yes', veganStatus.toLowerCase() === 'yes');
-    this.setState({ editing: null });
+  onClickSaveKeg = (key, name, brand, price, alcoholContent, pintsRemaining, glutenStatus, veganStatus) => {
+    this.props.updateItem(key, name === '' ? 'Nameless One' : name, brand, price, alcoholContent, pintsRemaining, glutenStatus.toLowerCase() === 'yes', veganStatus.toLowerCase() === 'yes');
+    this.props.leaveEdit();
   }
 
   generateEditModeUI(keg) {
@@ -101,7 +97,6 @@ class KegList extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       < div className="KegList" >
         <div className='add-keg-outer'>
@@ -111,7 +106,7 @@ class KegList extends React.Component {
         </div>
         <div className='flexbox'>{this.props.kegs.map(keg =>
           <Keg key={keg.key}>
-            {this.state.editing && this.state.editing === keg.key ? this.generateEditModeUI(keg) : this.generateNormalModeUI(keg)}
+            {this.props.edit.key === keg.key ? this.generateEditModeUI(keg) : this.generateNormalModeUI(keg)}
           </Keg >)}
         </div>
       </div >
@@ -125,5 +120,5 @@ KegList.propTypes = {
 }
 
 const mapStateToProps = state => { return { kegs: state.kegReducer, edit: state.editReducer } }
-KegList = connect(mapStateToProps, { addItem, updateItem, deleteItem })(KegList);
+KegList = connect(mapStateToProps, { addItem, updateItem, deleteItem, enterEdit, leaveEdit })(KegList);
 export default KegList;

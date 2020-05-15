@@ -19,7 +19,7 @@ const editReducer = (state = { key: null }, action) => {
   const { type, data } = action;
   switch (type) {
     case ENTER_EDIT_MODE:
-      return { item: data.item };
+      return { key: data.key };
     case LEAVE_EDIT_MODE:
       return { key: null };
     default:
