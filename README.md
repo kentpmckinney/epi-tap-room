@@ -100,6 +100,10 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 
 ```
 
+### Changelog:
+* 5/14/2020 - refactor Tap Room to use Redux, action creators and types, and combineReducers (3 hours)
+
+
 ### Specifications:
 
 Week 1:
