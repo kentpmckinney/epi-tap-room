@@ -59,7 +59,7 @@ class KegList extends React.Component {
         <div><label>Pints Remaining: <input id='keg-pints' defaultValue={keg.pintsRemaining} /></label></div>
         <div>
           <button onClick={() =>
-            this.onClickSaveKeg(keg.key, $('keg-name').value, $('keg-brand').value, $('keg-price').value, $('keg-alcohol').value, $('keg-gluten').value, $('keg-vegan').value, $('keg-pints').value)}>Save</button>
+            this.onClickSaveKeg(keg.key, $('keg-name').value, $('keg-brand').value, $('keg-price').value, $('keg-alcohol').value, $('keg-pints').value, $('keg-gluten').value, $('keg-vegan').value)}>Save</button>
         </div>
         <div><button onClick={this.onClickDeleteKeg} id={keg.key}>Delete</button></div>
       </React.Fragment>
