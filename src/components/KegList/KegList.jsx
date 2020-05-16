@@ -40,29 +40,29 @@ class KegList extends React.Component {
   }
 
   /* onClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
-  onClickSaveKeg = (key, name, brand, price, alcoholContent, pintsRemaining, glutenStatus, veganStatus) => {
-    this.props.updateItem(key, name === '' ? 'Nameless One' : name, brand, price, alcoholContent, pintsRemaining, glutenStatus.toLowerCase() === 'yes', veganStatus.toLowerCase() === 'yes');
+  onClickSaveKeg = event => {
+    let keg = event.target;
+    console.log(keg)
+    this.props.updateItem(keg.id, keg.name.value === '' ? 'Nameless One' : keg.name.value, keg.brand.value, keg.price.value, keg.alcohol.value, keg.pints.value, keg.gluten.value.toLowerCase() === 'yes', keg.vegan.value.toLowerCase() === 'yes');
     this.props.leaveEdit();
   }
 
   generateEditModeUI(keg) {
-    const $ = id => document.getElementById(id);
     return (
-      <React.Fragment>
-        <label>Name: <input className='keg-name' id='keg-name' defaultValue={keg.name} /></label>
+      <form id={keg.key} onSubmit={this.onClickSaveKeg}>
+        <label>Name: <input className='keg-name' id='name' defaultValue={keg.name} /></label>
         <hr />
-        <div><label>Brand: <input id='keg-brand' defaultValue={keg.brand}></input></label></div>
-        <div><label>Price per Pint $: <input id='keg-price' defaultValue={keg.pricePerPint} /></label></div>
-        <div><label>Alcohol Content %: <input id='keg-alcohol' defaultValue={keg.alcoholContent} /></label></div>
-        <div><label>Gluten Free: <input id='keg-gluten' defaultValue={keg.isGlutenFree ? 'Yes' : 'No'} /></label></div>
-        <div><label>Vegan: <input id='keg-vegan' defaultValue={keg.isVegan ? 'Yes' : 'No'} /></label></div>
-        <div><label>Pints Remaining: <input id='keg-pints' defaultValue={keg.pintsRemaining} /></label></div>
+        <div><label>Brand: <input id='brand' defaultValue={keg.brand}></input></label></div>
+        <div><label>Price per Pint $: <input id='price' defaultValue={keg.pricePerPint} /></label></div>
+        <div><label>Alcohol Content %: <input id='alcohol' defaultValue={keg.alcoholContent} /></label></div>
+        <div><label>Gluten Free: <input id='gluten' defaultValue={keg.isGlutenFree ? 'Yes' : 'No'} /></label></div>
+        <div><label>Vegan: <input id='vegan' defaultValue={keg.isVegan ? 'Yes' : 'No'} /></label></div>
+        <div><label>Pints Remaining: <input id='pints' defaultValue={keg.pintsRemaining} /></label></div>
         <div>
-          <button onClick={() =>
-            this.onClickSaveKeg(keg.key, $('keg-name').value, $('keg-brand').value, $('keg-price').value, $('keg-alcohol').value, $('keg-pints').value, $('keg-gluten').value, $('keg-vegan').value)}>Save</button>
+          <input type='submit' value='Save' />
         </div>
         <div><button onClick={this.onClickDeleteKeg} id={keg.key}>Delete</button></div>
-      </React.Fragment>
+      </form>
     );
   }
 
