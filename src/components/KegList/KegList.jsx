@@ -96,7 +96,6 @@ class KegList extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       < div className="KegList" >
         <div className='add-keg-outer'>

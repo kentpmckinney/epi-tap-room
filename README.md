@@ -104,6 +104,8 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 ### Changelog:
 * 5/14/2020 - refactor Tap Room to use Redux, action creators and types, and combineReducers (3 hours)
 * 5/15/2020 - added second reducer and refactored (2 hours)
+* 5/15/2020 - additional refactoring and bug fixes (1 hour)
+* 5/16/2020 - fixed/refactored tests (1 hour)
 
 
 ### Specifications:
@@ -141,5 +143,5 @@ Week 2:
 | All reducers should be tested thoroughly, and all tests must be passing | √ |
 | Action creators and constants should be used | √ |
 | React application works as expected and follows best practices, including using JSX, props, and prop types |  |
-| Jest is used to test all reducers |  |
+| Jest is used to test all reducers | √ |
 | Project is in a polished, portfolio-quality state |  |
