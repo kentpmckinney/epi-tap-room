@@ -7,7 +7,6 @@ const kegReducer = (state = [], action) => {
     case ADD_ITEM:
       return [{ ...data }, ...state];
     case UPDATE_ITEM:
-      console.log(`kegReducer: ${action.type + '-' + action.data.key + '-' + action.data.name}`)
       return state.map(item => item.key === data.key ? { ...data } : item);
     case DELETE_ITEM:
       return state.filter(item => item.key !== data.key);

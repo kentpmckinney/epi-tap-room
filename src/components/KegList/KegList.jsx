@@ -23,7 +23,7 @@ class KegList extends React.Component {
     this.props.updateItem(key, keg.name, keg.brand, keg.pricePerPint, keg.alcoholContent, pintsRemaining, keg.isGlutenFree, keg.isVegan);
   }
 
-  /* onClickEditKeg - change the state slice editing when the Keg's Edit button is clicked */
+  /* onClickEditKeg - set the item being edited when the Keg's Edit button is clicked */
   onClickEditKeg = event => { this.props.enterEdit(event.target.id); }
 
   /* onClickAddKeg - create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */

@@ -137,9 +137,9 @@ Week 2:
 
 | Spec | Status |
 | :------------- | :------------- |
-| All state in your application should be handled by Redux (even if React can handle it locally) |  |
-| All reducers should be tested thoroughly, and all tests must be passing |  |
-| Action creators and constants should be used |  |
+| All state in your application should be handled by Redux (even if React can handle it locally) | √ |
+| All reducers should be tested thoroughly, and all tests must be passing | √ |
+| Action creators and constants should be used | √ |
 | React application works as expected and follows best practices, including using JSX, props, and prop types |  |
 | Jest is used to test all reducers |  |
 | Project is in a polished, portfolio-quality state |  |

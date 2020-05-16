@@ -22,7 +22,7 @@ describe('action creator tests', () => {
     expect(action).toEqual({ type: ENTER_EDIT_MODE, data: { key: 1 } });
   });
 
-  test('enterEdit', () => {
+  test('leaveEdit', () => {
     const action = leaveEdit();
     expect(action).toEqual({ type: LEAVE_EDIT_MODE });
   });
