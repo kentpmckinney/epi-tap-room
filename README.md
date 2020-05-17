@@ -106,7 +106,7 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 * 5/15/2020 - added second reducer and refactored (2 hours)
 * 5/15/2020 - additional refactoring and bug fixes (1 hour)
 * 5/16/2020 - fixed/refactored tests (1 hour)
-
+* 5/16/2020 - created Form and Info components to simplify the KegList component (1 hour)
 
 ### Specifications:
 
