@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
+import Form from '../Form/Form';
+import Info from '../Info/Info';
 import { addItem, updateItem, deleteItem, enterEdit, leaveEdit } from '../../actions';
 import './KegList.scss';
 
@@ -47,54 +49,6 @@ class KegList extends React.Component {
     this.props.leaveEdit();
   }
 
-  generateEditModeUI(keg) {
-    return (
-      <form id={keg.key} onSubmit={this.onClickSaveKeg}>
-        <label>Name: <input className='keg-name' id='name' defaultValue={keg.name} /></label>
-        <hr />
-        <div><label>Brand: <input id='brand' defaultValue={keg.brand}></input></label></div>
-        <div><label>Price per Pint $: <input id='price' defaultValue={keg.pricePerPint} /></label></div>
-        <div><label>Alcohol Content %: <input id='alcohol' defaultValue={keg.alcoholContent} /></label></div>
-        <div><label>Gluten Free: <input id='gluten' defaultValue={keg.isGlutenFree ? 'Yes' : 'No'} /></label></div>
-        <div><label>Vegan: <input id='vegan' defaultValue={keg.isVegan ? 'Yes' : 'No'} /></label></div>
-        <div><label>Pints Remaining: <input id='pints' defaultValue={keg.pintsRemaining} /></label></div>
-        <div>
-          <input type='submit' value='Save' />
-        </div>
-        <div><button onClick={this.onClickDeleteKeg} id={keg.key}>Delete</button></div>
-      </form>
-    );
-  }
-
-  generateNormalModeUI(keg) {
-    return (
-      <React.Fragment>
-        <div className='keg-name'>{keg.name}</div>
-        <hr />
-        <div>Price per Pint: <span className='keg-price'>${keg.pricePerPint}</span></div>
-        <br />
-        <div>Pints Remaining: <span>{keg.pintsRemaining}</span>
-          {keg.pintsRemaining > 0 && keg.pintsRemaining < 10 ? <span className='warning'>Almost Emtpy</span> : ''}
-          {keg.pintsRemaining <= 0 ? <span className='warning'>Out of Stock</span> : ''}
-        </div>
-        <br />
-        <details>
-          <summary>Details</summary>
-          <br />
-          <div className='within-details'>
-            <div>Brand: <span>{keg.brand}</span></div>
-            <div>Alcohol Content: <span>{keg.alcoholContent}%</span></div>
-            <div>Gluten Free: <span>{keg.isGlutenFree ? 'Yes' : 'No'}</span></div>
-            <div>Vegan: <span>{keg.isVegan ? 'Yes' : 'No'}</span></div>
-          </div>
-        </details>
-        <br />
-        <button onClick={() => { this.onClickPurchasePint(keg.key); }} id={keg.key}>Purchase Pint</button>
-        <button onClick={this.onClickEditKeg} id={keg.key}>Edit</button>
-      </React.Fragment>
-    );
-  }
-
   render() {
     return (
       < div className="KegList" >
@@ -105,7 +59,11 @@ class KegList extends React.Component {
         </div>
         <div className='flexbox'>{this.props.kegs.map(keg =>
           <Keg key={keg.key}>
-            {this.props.edit.key === keg.key ? this.generateEditModeUI(keg) : this.generateNormalModeUI(keg)}
+            {
+              this.props.edit.key === keg.key ?
+                <Form keg={keg} onSubmit={this.onClickSaveKeg} onDelete={this.onClickDeleteKeg} /> :
+                <Info keg={keg} onPurchase={() => { this.onClickPurchasePint(keg.key); }} onEdit={this.onClickEditKeg} />
+            }
           </Keg >)}
         </div>
       </div >
