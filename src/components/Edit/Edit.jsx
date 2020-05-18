@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Form = props => {
+const Edit = props => {
   const { keg } = props;
   return (
     <form id={keg.key} onSubmit={props.onSubmit}>
@@ -20,4 +21,10 @@ const Form = props => {
   );
 }
 
-export default Form;
+Edit.propTypes = {
+  keg: PropTypes.object,
+  onSubmit: PropTypes.func,
+  onDelete: PropTypes.func
+}
+
+export default Edit;

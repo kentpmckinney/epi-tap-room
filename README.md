@@ -82,8 +82,8 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 |   |--------------------------------|     |
 |                                          |
 |   |--------------------------------|     |
-|   |      KegList         [New] <---|-----|--- Clicking on New in KegList adds a new Keg to the front of the list in Edit mode
-|   |                                |     |
+|   |      KegList         [New] <---|-----|--- Clicking on New in KegList adds a new Keg to the front of the list in
+|   |                                |     |    Edit mode
 |   |          --------------------  |     |
 |   |          | [Info]        <--|--|-----|--- Information about a beer on tap shows up in a list of Info components
 |   |          |                  |  |     |    Clicking on Details expands to user interface to show more information

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Form = props => {
+const Info = props => {
   const { keg } = props;
   return (
     <React.Fragment>
@@ -24,10 +25,16 @@ const Form = props => {
         </div>
       </details>
       <br />
-      <button onClick={props.onPurchase} id={keg.key}>Purchase Pint</button>
+      <button onClick={() => { props.onPurchase(keg.key) }} id={keg.key}>Purchase Pint</button>
       <button onClick={props.onEdit} id={keg.key}>Edit</button>
     </React.Fragment >
   );
 }
 
-export default Form;
+Info.propTypes = {
+  keg: PropTypes.object,
+  onPurchase: PropTypes.func,
+  onEdit: PropTypes.func
+}
+
+export default Info;

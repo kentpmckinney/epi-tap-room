@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Keg from '../Keg/Keg';
-import Form from '../Form/Form';
+import Edit from '../Edit/Edit';
 import Info from '../Info/Info';
 import { addItem, updateItem, deleteItem, enterEdit, leaveEdit } from '../../actions';
 import './KegList.scss';
@@ -44,7 +44,6 @@ class KegList extends React.Component {
   /* onClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
   onClickSaveKeg = event => {
     let keg = event.target;
-    console.log(keg)
     this.props.updateItem(keg.id, keg.name.value === '' ? 'Nameless One' : keg.name.value, keg.brand.value, keg.price.value, keg.alcohol.value, keg.pints.value, keg.gluten.value.toLowerCase() === 'yes', keg.vegan.value.toLowerCase() === 'yes');
     this.props.leaveEdit();
   }
@@ -58,12 +57,9 @@ class KegList extends React.Component {
           </div>
         </div>
         <div className='flexbox'>{this.props.kegs.map(keg =>
-          <Keg key={keg.key}>
-            {
-              this.props.edit.key === keg.key ?
-                <Form keg={keg} onSubmit={this.onClickSaveKeg} onDelete={this.onClickDeleteKeg} /> :
-                <Info keg={keg} onPurchase={() => { this.onClickPurchasePint(keg.key); }} onEdit={this.onClickEditKeg} />
-            }
+          <Keg key={keg.key}>{this.props.edit.key === keg.key ?
+            <Edit keg={keg} onSubmit={this.onClickSaveKeg} onDelete={this.onClickDeleteKeg} /> :
+            <Info keg={keg} onPurchase={this.onClickPurchasePint} onEdit={this.onClickEditKeg} />}
           </Keg >)}
         </div>
       </div >
