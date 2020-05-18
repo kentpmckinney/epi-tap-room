@@ -3,11 +3,11 @@
 
 Provides the ability to view, add, and edit kegs
 
-https://github.com/kentpmckinney/epi-tap-room
+https://github.com/kentpmckinney/epi-tap-room-redux
 
 ## Previewing this Project
 
-This project is hosted at: https://kentpmckinney.github.io/epi-tap-room
+This project is hosted at: https://kentpmckinney.github.io/epi-tap-room-redux
 
 ## Working with the Source Code
 
@@ -29,8 +29,8 @@ Git (optional but recommended)
 
 ### Setting up a Development Environment
 
-1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room
-   or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room.git
+1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room-redux
+   or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room-redux.git
 2. Navigate to the folder location of the source files in Finder or in the Terminal
 3. Run the command `npm install` to download a local cache of the npm packages used by this application
 4. Build the application with the command `npm run build`
