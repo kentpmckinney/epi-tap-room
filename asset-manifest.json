@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/epi-tap-room-redux/static/css/main.e4525080.chunk.css",
+    "main.js": "/epi-tap-room-redux/static/js/main.a8a3ab67.chunk.js",
+    "main.js.map": "/epi-tap-room-redux/static/js/main.a8a3ab67.chunk.js.map",
+    "runtime-main.js": "/epi-tap-room-redux/static/js/runtime-main.2ea6c258.js",
+    "runtime-main.js.map": "/epi-tap-room-redux/static/js/runtime-main.2ea6c258.js.map",
+    "static/js/2.ce1a462a.chunk.js": "/epi-tap-room-redux/static/js/2.ce1a462a.chunk.js",
+    "static/js/2.ce1a462a.chunk.js.map": "/epi-tap-room-redux/static/js/2.ce1a462a.chunk.js.map",
+    "index.html": "/epi-tap-room-redux/index.html",
+    "precache-manifest.5df924ef96da8899ed56bd4ab9ff4e7b.js": "/epi-tap-room-redux/precache-manifest.5df924ef96da8899ed56bd4ab9ff4e7b.js",
+    "service-worker.js": "/epi-tap-room-redux/service-worker.js",
+    "static/css/main.e4525080.chunk.css.map": "/epi-tap-room-redux/static/css/main.e4525080.chunk.css.map",
+    "static/js/2.ce1a462a.chunk.js.LICENSE.txt": "/epi-tap-room-redux/static/js/2.ce1a462a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ea6c258.js",
+    "static/js/2.ce1a462a.chunk.js",
+    "static/css/main.e4525080.chunk.css",
+    "static/js/main.a8a3ab67.chunk.js"
+  ]
+}
