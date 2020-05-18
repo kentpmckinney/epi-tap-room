@@ -13,8 +13,8 @@ const Edit = props => {
       <div><label>Gluten Free: <input id='gluten' defaultValue={keg.isGlutenFree ? 'Yes' : 'No'} /></label></div>
       <div><label>Vegan: <input id='vegan' defaultValue={keg.isVegan ? 'Yes' : 'No'} /></label></div>
       <div><label>Pints Remaining: <input id='pints' defaultValue={keg.pintsRemaining} /></label></div>
-      <div><button type='submit'>Save</button></div>
-      <div><button onClick={props.onDelete} id={keg.key}>Delete</button></div>
+      <br />
+      <div><button type='submit'>Save</button><button onClick={props.onDelete} id={keg.key}>Delete</button></div>
     </form>
   );
 }
