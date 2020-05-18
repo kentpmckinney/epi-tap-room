@@ -82,20 +82,20 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 |   |--------------------------------|     |
 |                                          |
 |   |--------------------------------|     |
-|   |      KegList           [New] <-|-----|--- Clicking on New in KegList adds a new Keg to the top of
-|   |          -----------           |     |    the list in Edit mode
-|   |          | Keg     |           |     |
-|   |          -----------           |     |
-|   |          | Keg     |           |     |
+|   |      KegList         [New] <---|-----|--- Clicking on New in KegList adds a new Keg to the front of the list in Edit mode
+|   |                                |     |
 |   |          --------------------  |     |
-|   |          | [Details] [Edit] <--|-----|--- Clicking on Details or Edit in Keg fires event handlers
-|   |          |                  |  |     |    in KegList. The event handlers cause different children
-|   |          |    Keg           |  |     |    to be passed to <Keg />. <Keg /> is thus reused rather
-|   |          |                  |  |     |    than creating separate components
+|   |          | [Info]        <--|--|-----|--- Information about a beer on tap shows up in a list of Info components
+|   |          |                  |  |     |    Clicking on Details expands to user interface to show more information
+|   |          | [Details]        |  |     |
+|   |          --------------------  |     |
+|   |                 . . .          |     |
+|   |          --------------------  |     |
+|   |          | [Edit]        <--|--|-----|--- Clicking on Edit on an a keg Info card Keg fires event handlers
+|   |          |                  |  |     |    in KegList.
 |   |          --------------------  |     |
 |   |                                |     |
 |   |--------------------------------|     |
-|                                          |
 |                                          |
 |------------------------------------------|
 
