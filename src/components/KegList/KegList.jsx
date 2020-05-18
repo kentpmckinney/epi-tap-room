@@ -68,7 +68,7 @@ class KegList extends React.Component {
 }
 
 KegList.propTypes = {
-  kegReducer: PropTypes.arrayOf(Object)
+  kegData: PropTypes.object
 }
 
 const mapStateToProps = state => { return { kegs: state.kegReducer, edit: state.editReducer } }
