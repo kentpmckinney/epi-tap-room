@@ -82,17 +82,19 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 |   |--------------------------------|     |
 |                                          |
 |   |--------------------------------|     |
-|   |      KegList         [New] <---|-----|--- Clicking on New in KegList adds a new Keg to the front of the list in
-|   |                                |     |    Edit mode
+|   |      KegList         [New] <---|-----|--- Clicking on New in KegList adds a new Keg to the front of
+|   |                                |     |    the list in Edit mode
 |   |          --------------------  |     |
-|   |          | [Info]        <--|--|-----|--- Information about a beer on tap shows up in a list of Info components
-|   |          |                  |  |     |    Clicking on Details expands to user interface to show more information
-|   |          | [Details]        |  |     |
+|   |          | [Info]        <--|--|-----|--- Information about a beer on tap shows up in a list of Info
+|   |          |                  |  |     |    components. Clicking on Details expands the user interface
+|   |          |  > Details       |  |     |    to show more information. Has purchase and edit options
+|   |          |  Purchase  Edit  |  |     |
 |   |          --------------------  |     |
 |   |                 . . .          |     |
 |   |          --------------------  |     |
-|   |          | [Edit]        <--|--|-----|--- Clicking on Edit on an a keg Info card Keg fires event handlers
-|   |          |                  |  |     |    in KegList.
+|   |          | [Edit]        <--|--|-----|--- Clicking on Edit on an a keg Info card Keg turns it into
+|   |          |                  |  |     |    an Edit card, which has save and delete options
+|   |          |  Save   Delete   |  |     |   
 |   |          --------------------  |     |
 |   |                                |     |
 |   |--------------------------------|     |
@@ -107,6 +109,7 @@ Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redu
 * 5/15/2020 - additional refactoring and bug fixes (1 hour)
 * 5/16/2020 - fixed/refactored tests (1 hour)
 * 5/16/2020 - created Form and Info components to simplify the KegList component (1 hour)
+* 5/18/2020 - finishing touches
 
 ### Specifications:
 
@@ -142,6 +145,6 @@ Week 2:
 | All state in your application should be handled by Redux (even if React can handle it locally) | √ |
 | All reducers should be tested thoroughly, and all tests must be passing | √ |
 | Action creators and constants should be used | √ |
-| React application works as expected and follows best practices, including using JSX, props, and prop types |  |
+| React application works as expected and follows best practices, including using JSX, props, and prop types | √ |
 | Jest is used to test all reducers | √ |
-| Project is in a polished, portfolio-quality state |  |
+| Project is in a polished, portfolio-quality state | √ |
