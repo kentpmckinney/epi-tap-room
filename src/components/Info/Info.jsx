@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Info.scss';
 
 const Info = props => {
   const { keg } = props;
   return (
-    <React.Fragment>
+    <div className='Info'>
       <div className='keg-name'>{keg.name}</div>
       <hr />
       <div>Price per Pint: <span className='keg-price'>${keg.pricePerPint}</span></div>
@@ -27,7 +28,7 @@ const Info = props => {
       <br />
       <button onClick={() => { props.onPurchase(keg.key) }} id={keg.key}>Purchase Pint</button>
       <button onClick={props.onEdit} id={keg.key}>Edit</button>
-    </React.Fragment >
+    </div>
   );
 }
 

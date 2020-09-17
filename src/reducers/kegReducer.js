@@ -4,7 +4,7 @@ export default (state = [], action) => {
   const { type, data } = action;
   switch (type) {
     case ADD_ITEM:
-      return [{ ...data }, ...state];
+      return [...state, { ...data }];
     case UPDATE_ITEM:
       return state.map(item => item.key === data.key ? { ...data } : item);
     case DELETE_ITEM:

@@ -26,7 +26,7 @@ class KegList extends React.Component {
     });
   }
 
-  /* onClickPurchasePint - decrement remaining pints when a pint is purchased */
+  /* Decrement remaining pints when a pint is purchased */
   onClickPurchasePint = (key) => {
     const keg = this.props.kegs.filter(keg => keg.key === key)[0];
     let pintsRemaining = keg.pintsRemaining - 1;
@@ -43,23 +43,23 @@ class KegList extends React.Component {
     );
   }
 
-  /* onClickEditKeg - set the item being edited when the Keg's Edit button is clicked */
+  /* Set the item being edited when the Keg's Edit button is clicked */
   onClickEditKeg = event => { this.props.enterEdit(event.target.id); }
 
-  /* onClickAddKeg - create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */
+  /* Create a new Keg at the top of the list and in Edit mode when the Add Keg button is clicked */
   onClickAddKeg = () => {
     const key = v4();
     this.props.addItem(key, '', '', 0.00, 0.0, 124, false, false);
     this.props.enterEdit(key);
   }
 
-  /* onClickDeleteKeg - delete a Keg when the Delete button on the Edit screen is clicked */
+  /* Delete a Keg when the Delete button on the Edit screen is clicked */
   onClickDeleteKeg = event => {
     this.props.deleteItem(event.target.id);
     this.props.leaveEdit();
   }
 
-  /* onClickSaveKeg - Update the record for the Keg that was just edited when the Save button is clicked */
+  /* Update the record for the Keg that was just edited when the Save button is clicked */
   onClickSaveKeg = event => {
     let keg = event.target;
     this.props.updateItem(
@@ -76,21 +76,24 @@ class KegList extends React.Component {
 
   render() {
     return (
-      < div className="KegList" >
-        <div className='add-keg-outer'>
-          <div className='add-keg-inner'>
-            <button onClick={this.onClickAddKeg}>Add Keg</button>
-          </div>
-        </div>
+      <div className="KegList">
         <div className='flexbox'>{this.props.kegs.map(keg =>
-          <Keg key={keg.key}>{this.props.edit.key === keg.key ?
-            <Edit keg={keg} onSubmit={this.onClickSaveKeg} onDelete={this.onClickDeleteKeg} /> :
-            <Info keg={keg} onPurchase={this.onClickPurchasePint} onEdit={this.onClickEditKeg} />}
+          <Keg key={keg.key}>{this.props.edit.key === keg.key
+            ? <Edit keg={keg} onSubmit={this.onClickSaveKeg} onDelete={this.onClickDeleteKeg} />
+            : <Info keg={keg} onPurchase={this.onClickPurchasePint} onEdit={this.onClickEditKeg} />}
           </Keg >)}
+          <div className='add-keg-outer'>
+            {(this.props.edit.key === null)
+              ? <Keg>
+                  <span className='add-keg-inner' onClick={this.onClickAddKeg}>+</span>
+                </Keg>
+              : <React.Fragment />}
+          </div>
         </div>
       </div >
     );
   }
+
 }
 
 KegList.propTypes = {

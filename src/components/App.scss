@@ -1,5 +1,9 @@
 .App {
 
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand');
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+
   .appgrid {
     display: grid;
     grid-template-columns: 1fr;
@@ -18,4 +22,8 @@
     grid-area: 2 / 1 / 2 / 2;
   }
 
+  button:hover {
+    transform: scale(1.1);
+  }
+  
 }

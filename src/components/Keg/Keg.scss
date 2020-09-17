@@ -1,10 +1,17 @@
 .Keg {
-  height: auto;
+  align-self: flex-start;
   border: 1px solid lightgray;
   border-radius: 10px;
-  margin: 10px;
-  width: auto;
-  padding: 10px;
-  min-width: 240px;
-  box-shadow: 1px 1px 1px 1px #EFEFEF;
+  margin: 8px;
+
+  padding: 8px;
+  box-shadow: 1px 1px 1px 0px #EFEFEF;
+}
+
+.Keg:hover {
+  box-shadow: 1px 1px 1px 0px #DADADA;
+}
+
+summary {
+  outline: none;
 }
