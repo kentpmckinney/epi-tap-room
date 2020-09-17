@@ -1,4 +1,5 @@
-<!-- Category: Epicodus;React;HTML/CSS/JS -->
+<!-- Category: Epicodus;React;Redux;HTML/CSS/JS -->
+<!-- Portfolio: Yes -->
 # Tap Room (Redux)
 
 Provides the ability to view, add, and edit kegs
