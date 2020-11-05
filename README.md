@@ -1,151 +1,83 @@
-<!-- Category: Epicodus;React;Redux;HTML/CSS/JS -->
-<!-- Portfolio: Yes -->
+
 # Tap Room (Redux)
 
-Provides the ability to view, add, and edit kegs
+An inventory management system for a fictional tap room
 
-https://github.com/kentpmckinney/epi-tap-room-redux
+  <br/>
 
-## Previewing this Project
+### How to Use
 
-This project is hosted at: https://kentpmckinney.github.io/epi-tap-room-redux
 
-## Working with the Source Code
+<br/>
 
-The following instructions explain how to set up a development environment for this project on MacOS. Steps will differ depending on the operating system.
+### Previewing this Project
 
-### Prerequisites
+<br/>
 
-The following software must be installed and properly configured on the target machine. 
+### Technologies Used
 
-```
-An updated web browser (Internet Explorer is not compatible)
-```
-```
-Node.js
-```
-```
-Git (optional but recommended)
-```
+  <code>JavaScript
+HTML
+CSS
+React
+Redux</code>
+  <br/>
+  <br/>
 
-### Setting up a Development Environment
+### Working with the Source Code
 
-1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room-redux
-   or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room-redux.git
-2. Navigate to the folder location of the source files in Finder or in the Terminal
-3. Run the command `npm install` to download a local cache of the npm packages used by this application
-4. Build the application with the command `npm run build`
-5. Start the application with the command `npm run start`
+<details>
+  <summary>Instructions</summary>
 
-## Running Automated Tests
+  <br>
+  The following are suggestions to help set up a development environment for this project. The actual steps needed may differ slightly depending on the operating system and other factors.
 
-Tests are under ``/src/__tests__``
+  <br/>
+  <br/>
 
-```
-npm run test
-```
+  ### Prerequisites
 
-## Deployment
+  The following software must be installed and properly configured on the target machine. 
 
-Run the command 'npm run build' to build a production version of the application under ./build
+  
 
-## Technologies Used
+* Git (recommended)
+* An updated web browser (Internet Explorer may not be compatible)
+  <br/>
 
-* JavaScript
-* HTML
-* CSS
-* React
-* Redux
-* Webpack
-* Babel
+  ### Setting up a Development Environment
 
-## Authors
+  The following steps are meant to be a quick way to get the project up and running.
 
-Kent McKinney - [GitHub](https://github.com/kentpmckinney) - [LinkedIn](https://www.linkedin.com/in/kentpmckinney/)
+  
+1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room-redux or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room-redux.git
+1. Launch a new tab in a web browser
+1. Select to open a file location and navigate to the folder location of the source files
+1. Choose the file <code>index.html</code>
+  <br/>
 
-### Copyright &copy; 2020 Kent P. McKinney
+  ### Notes
 
-## Acknowledgments
+  
 
-Week 1: https://www.learnhowtoprogram.com/fidgetech-4-react/4-1-react-fundamentals/4-1-5-1-react-fundamentals-independent-project
+  ### Deployment
 
-Week 2: https://www.learnhowtoprogram.com/react/react-with-redux/react-with-redux-independent-project
+  The files provided are ready to be deployed directly to a web server.
 
-### Component Diagram:
+</details>
 
-```
-|------------------------------------------|
-|                                          |
-|     App                                  |
-|                                          |
-|   |--------------------------------|     |
-|   |             Header             |     |
-|   |--------------------------------|     |
-|                                          |
-|   |--------------------------------|     |
-|   |      KegList         [New] <---|-----|--- Clicking on New in KegList adds a new Keg to the front of
-|   |                                |     |    the list in Edit mode
-|   |          --------------------  |     |
-|   |          | [Info]        <--|--|-----|--- Information about a beer on tap shows up in a list of Info
-|   |          |                  |  |     |    components. Clicking on Details expands the user interface
-|   |          |  > Details       |  |     |    to show more information. Has purchase and edit options
-|   |          |  Purchase  Edit  |  |     |
-|   |          --------------------  |     |
-|   |                 . . .          |     |
-|   |          --------------------  |     |
-|   |          | [Edit]        <--|--|-----|--- Clicking on Edit on an a keg Info card Keg turns it into
-|   |          |                  |  |     |    an Edit card, which has save and delete options
-|   |          |  Save   Delete   |  |     |   
-|   |          --------------------  |     |
-|   |                                |     |
-|   |--------------------------------|     |
-|                                          |
-|------------------------------------------|
+<br/>
 
-```
+### Authors
 
-### Changelog:
-* 5/14/2020 - refactor Tap Room to use Redux, action creators and types, and combineReducers (3 hours)
-* 5/15/2020 - added second reducer and refactored (2 hours)
-* 5/15/2020 - additional refactoring and bug fixes (1 hour)
-* 5/16/2020 - fixed/refactored tests (1 hour)
-* 5/16/2020 - created Form and Info components to simplify the KegList component (1 hour)
-* 5/18/2020 - finishing touches
+[kentpmckinney](https://github.com/kentpmckinney)
+<br/>
+<br/>
 
-### Specifications:
+### Acknowledgments
 
-Week 1:
+<sub>https://www.learnhowtoprogram.com/intermediate-javascript/object-oriented-javascript/address-book-movie-tickets-bank-account</sub>
+<br/>
+<br/>
 
-| Spec | Status |
-| :------------- | :------------- |
-| Application created with create-react-app runs properly | √ |
-| User can see a list of all available kegs | √ |
-| User can see the name, brand, price, alcohol content, gluten status, and vegan status for each keg | √ |
-| User can submit a form to add a new keg | √ |
-| User can click on a keg to see its detail page | √ |
-| User can see how many pints are left in a keg | √ |
-| User can click on a button next to the keg whenever a pint is sold | √ |
-| Clicking the button to sell a pint decreases the number of pints by 1 out of 124 | √ |
-| The number of pints in a keg does not go below zero | √ |
-| Application compiles and runs and all required functionality is included | √ |
-| Functional and class components are used correctly | √ |
-| Application effectively uses local and shared state | √ |
-| README includes an accurate representation of the component tree | √ |
-| Props are used correctly and always include PropTypes | √ |
-| [Optional] User can edit the keg's properties at any time | √ |
-| [Optional] User can delete a keg | √ |
-| [Optional] Keg shows as out of stock when it's empty | √ |
-| [Optional] Kegs with less than 10 pints show 'Almost Empty' | √ |
-| [Optional] Keg prices are color-coded for readability | √ |
-| [Optional] Application is nicely styled | √ |
-
-Week 2:
-
-| Spec | Status |
-| :------------- | :------------- |
-| All state in your application should be handled by Redux (even if React can handle it locally) | √ |
-| All reducers should be tested thoroughly, and all tests must be passing | √ |
-| Action creators and constants should be used | √ |
-| React application works as expected and follows best practices, including using JSX, props, and prop types | √ |
-| Jest is used to test all reducers | √ |
-| Project is in a polished, portfolio-quality state | √ |
+###### <sub>Copyright&copy; 2020 [kentpmckinney](https://github.com/kentpmckinney). All rights reserved.</sub>
