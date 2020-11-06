@@ -11,6 +11,7 @@ An inventory management system for a fictional tap room
 <br/>
 
 ### Previewing this Project
+![Screenshot](http://kentpmckinney.github.io/epi-tap-room-redux/epi-tap-room.gif)
 
 <br/>
 
