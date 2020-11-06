@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/epi-tap-room-redux/precache-manifest.dff8f86c21cdd10513dd284ac8c0c754.js"
+  "/epi-tap-room-redux/precache-manifest.93192171ea43f2651453607fb4570f22.js"
 );
 
 self.addEventListener('message', (event) => {
