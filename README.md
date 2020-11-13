@@ -1,5 +1,5 @@
 
-# Tap Room (Redux)
+# Tap Room
 
 An inventory management system for a fictional tap room
 
@@ -11,7 +11,7 @@ An inventory management system for a fictional tap room
 <br/>
 
 ### Previewing this Project
-![Screenshot](http://kentpmckinney.github.io/epi-tap-room-redux/epi-tap-room.gif)
+![Screenshot](http://kentpmckinney.github.io/epi-tap-room/epi-tap-room.gif)
 
 <br/>
 
@@ -51,7 +51,7 @@ Redux</code>
   The following steps are meant to be a quick way to get the project up and running.
 
   
-1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room-redux or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room-redux.git
+1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room.git
 1. Launch a new tab in a web browser
 1. Select to open a file location and navigate to the folder location of the source files
 1. Choose the file <code>index.html</code>
