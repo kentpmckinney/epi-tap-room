@@ -3,7 +3,7 @@
 
 An inventory management system for a fictional tap room
 
-  <br/>
+<br/>
 
 ### How to Use
 
@@ -19,13 +19,13 @@ A [live demo](https://kentpmckinney.github.io/epi-tap-room) of this application 
 
 ### Technologies Used
 
-  <code>JavaScript
+<code>JavaScript
 HTML
 CSS
 React
 Redux</code>
-  <br/>
-  <br/>
+<br/>
+<br/>
 
 ### Working with the Source Code
 
@@ -67,7 +67,7 @@ The following steps are meant to be a quick way to get the project up and runnin
 
 The files provided are ready to be deployed directly to a web server.
 
-<!-- </details> -->
+</details>
 
 <br/>
 
