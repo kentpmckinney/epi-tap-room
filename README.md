@@ -29,8 +29,8 @@ Redux</code>
 
 ### Working with the Source Code
 
-<details markdown="1">
-  <summary markdown="1">Instructions</summary>
+<!-- <details markdown="1">
+  <summary markdown="1">Instructions</summary> -->
 
   <br markdown="1"/>
   The following are suggestions to help set up a development environment for this project. The actual steps needed may differ slightly depending on the operating system and other factors.
@@ -67,7 +67,7 @@ Redux</code>
 
   The files provided are ready to be deployed directly to a web server.
 
-</details>
+<!-- </details> -->
 
 <br markdown="1"/>
 
