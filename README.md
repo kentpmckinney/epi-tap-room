@@ -49,9 +49,9 @@ The following software must be installed and properly configured on the target m
 
 The following steps are meant to be a quick way to get the project up and running.
 
-1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-tap-room or clone using the repository link: https://github.com/kentpmckinney/epi-tap-room.git
+1. Download a copy of the source code from: [https://github.com/kentpmckinney/epi-tap-room](https://github.com/kentpmckinney/epi-tap-room) or clone using the repository link: <code>https://github.com/kentpmckinney/epi-tap-room.git</code>
 1. Navigate to the folder location of the source files in in a terminal
-1. Make sure the file <code>package.json</code> is in the current folder and that <code>Node.js</node> is installed
+1. Make sure the file <code>package.json</code> is in the current folder and that <code>Node.js</code> is installed
 1. Run the command <code>npm install</code> to download a local cache of the npm packages used by this application
 1. Build the application with the command <code>npm run build</code>
 1. Start the application with the command <code>npm run start</code>
