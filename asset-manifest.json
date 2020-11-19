@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/epi-tap-room-redux/static/css/main.fc1fbb0f.chunk.css",
-    "main.js": "/epi-tap-room-redux/static/js/main.66656aca.chunk.js",
-    "main.js.map": "/epi-tap-room-redux/static/js/main.66656aca.chunk.js.map",
-    "runtime-main.js": "/epi-tap-room-redux/static/js/runtime-main.2ea6c258.js",
-    "runtime-main.js.map": "/epi-tap-room-redux/static/js/runtime-main.2ea6c258.js.map",
-    "static/js/2.ce1a462a.chunk.js": "/epi-tap-room-redux/static/js/2.ce1a462a.chunk.js",
-    "static/js/2.ce1a462a.chunk.js.map": "/epi-tap-room-redux/static/js/2.ce1a462a.chunk.js.map",
-    "index.html": "/epi-tap-room-redux/index.html",
-    "precache-manifest.93192171ea43f2651453607fb4570f22.js": "/epi-tap-room-redux/precache-manifest.93192171ea43f2651453607fb4570f22.js",
-    "service-worker.js": "/epi-tap-room-redux/service-worker.js",
-    "static/css/main.fc1fbb0f.chunk.css.map": "/epi-tap-room-redux/static/css/main.fc1fbb0f.chunk.css.map",
-    "static/js/2.ce1a462a.chunk.js.LICENSE.txt": "/epi-tap-room-redux/static/js/2.ce1a462a.chunk.js.LICENSE.txt"
+    "main.css": "/epi-tap-room/static/css/main.fc1fbb0f.chunk.css",
+    "main.js": "/epi-tap-room/static/js/main.ba6e1956.chunk.js",
+    "main.js.map": "/epi-tap-room/static/js/main.ba6e1956.chunk.js.map",
+    "runtime-main.js": "/epi-tap-room/static/js/runtime-main.acb59474.js",
+    "runtime-main.js.map": "/epi-tap-room/static/js/runtime-main.acb59474.js.map",
+    "static/js/2.428d0727.chunk.js": "/epi-tap-room/static/js/2.428d0727.chunk.js",
+    "static/js/2.428d0727.chunk.js.map": "/epi-tap-room/static/js/2.428d0727.chunk.js.map",
+    "index.html": "/epi-tap-room/index.html",
+    "precache-manifest.e763fe678733c42989cc439382c93da5.js": "/epi-tap-room/precache-manifest.e763fe678733c42989cc439382c93da5.js",
+    "service-worker.js": "/epi-tap-room/service-worker.js",
+    "static/css/main.fc1fbb0f.chunk.css.map": "/epi-tap-room/static/css/main.fc1fbb0f.chunk.css.map",
+    "static/js/2.428d0727.chunk.js.LICENSE.txt": "/epi-tap-room/static/js/2.428d0727.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2ea6c258.js",
-    "static/js/2.ce1a462a.chunk.js",
+    "static/js/runtime-main.acb59474.js",
+    "static/js/2.428d0727.chunk.js",
     "static/css/main.fc1fbb0f.chunk.css",
-    "static/js/main.66656aca.chunk.js"
+    "static/js/main.ba6e1956.chunk.js"
   ]
 }
